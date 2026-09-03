@@ -98,6 +98,9 @@ border-radius:22px;background:rgba(255,255,255,.965);box-shadow:0 16px 40px rgba
 .card .ct{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.25;color:var(--text)}
 .card .cd{font-size:13.5px;color:var(--muted);line-height:1.5;flex:1;margin:0}
 .card .cm{font-family:var(--font-mono);font-size:10.5px;color:var(--muted)}
+.card .go{margin-top:6px;font-size:14.5px;font-weight:800;color:var(--cta);display:inline-flex;align-items:center;gap:7px}
+.card:hover .go .ar{transform:translateX(3px)}
+.card .go .ar{transition:transform .15s}
 .empty{font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--muted);padding:30px 0}
 /* ============ article ============ */
 .page{max-width:760px;margin:0 auto;padding:34px 44px 60px}
@@ -167,12 +170,14 @@ h1{font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing
 .mid a{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:999px;background:var(--ink);color:var(--offwhite);border:1px solid var(--ink)}
 :root[data-theme=dark] .mid a{background:var(--surface);border-color:var(--accent);color:var(--text)}
 /* ============ CTA ============ */
-.cta{margin:40px 0 6px;padding:34px 36px;border-radius:28px;background:linear-gradient(135deg,var(--bg-dark) 0%,var(--accent) 100%);color:#fff;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:10px 10px;box-shadow:0 18px 40px rgba(var(--tint-rgb),.18)}
+.cta{margin:40px 0 6px;padding:34px 36px;border-radius:28px;color:#fff;background-color:var(--bg-dark);background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(135deg,var(--bg-dark) 0%,var(--accent) 100%);background-size:10px 10px,auto;box-shadow:0 18px 40px rgba(var(--tint-rgb),.18)}
 .cta .ttl{font-family:var(--font-display);font-size:25px;font-weight:700;letter-spacing:-.02em;margin:10px 0 6px}
 .cta .sub{font-size:14.5px;line-height:1.55;color:rgba(245,245,240,.68);margin:0 0 20px;max-width:60ch}
-.cta .eyebrow{color:var(--accent-text)}
+.cta .eyebrow{color:var(--cta-hi)}
 .cta-btn{font-family:var(--font-body);font-size:15px;font-weight:800;padding:14px 24px;border-radius:999px;background:linear-gradient(180deg,var(--cta-hi),var(--cta));color:#fff;border:0;box-shadow:0 12px 26px rgba(0,0,0,.22);display:inline-flex;align-items:center;gap:9px}
 .cta-btn:hover{transform:translateY(-1px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.cta-btn.alt{background:transparent;border:1.6px solid rgba(255,255,255,.55);box-shadow:none;color:#fff}
 /* ============ footer ============ */
 .ft{border-top:1px solid var(--hair);background:#fff1e6;background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:9px 9px;padding:36px 0 26px}
 .ft-in{max-width:1340px;margin:0 auto;padding:0 44px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
@@ -192,10 +197,13 @@ h1{font-size:28px}
 .tabs{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 }
 @media(max-width:700px){
-.hd-in{height:60px;gap:12px}
-.hd-nav{display:none}
-.logo{font-size:16px}
-.hd-btn{font-size:12.5px;padding:9px 13px}
+.hd-in{height:auto;min-height:58px;gap:8px;flex-wrap:wrap;padding-top:8px;padding-bottom:6px}
+.hd-in .sp{display:none}
+.tools{margin-left:auto}
+.hd-nav{order:5;flex:1 0 100%;gap:18px;font-size:14.5px;border-top:1px solid var(--hair);padding-top:8px}
+.hd-nav a{padding:2px 0}
+.logo{font-size:14.5px}
+.hd-btn{font-size:12px;padding:9px 12px}
 .cards{grid-template-columns:1fr}
 .cta{padding:24px 20px}
 .cta .ttl{font-size:21px}
@@ -254,7 +262,7 @@ h1{font-size:28px}
 <div class="mid"><a href="https://spryginatatyana.ru/secret5?utm_source=instagram&amp;utm_medium=direct&amp;utm_campaign=secret_bot">Смотреть видеоурок</a></div>
 <div class="sec"><h2 id="sec-3">Движение без спорта</h2><p>Спорт для снижения веса не обязателен. Я похудела на 30 кг и не использовала его.</p><p>Работают маленькие решения каждый день. Одна тренировка в неделю на этом фоне почти ничего не меняет.</p><ul><li>Пешком до магазина.</li><li>Лестница вместо лифта.</li><li>Прогулка после ужина.</li><li>Уборка, дети, дача: это тоже движение.</li></ul><div class="note">Если движение вам нравится, оно останется в жизни надолго. Если оно наказание за съеденное, вы бросите его через две недели.</div></div>
 <div class="sec"><h2 id="sec-4">Что делать сегодня</h2><p>Одно действие. Новый план на месяц сейчас не нужен.</p><p>Вернитесь к трём приёмам пищи и полной тарелке. Остановка почти всегда лечится порядком. Сокращение еды делает только хуже.</p><div class="quote">Твоя ценность как человека не равна цифре на весах. Татьяна Спрыгина</div><p>И встаньте вечером у зеркала на 30 секунд. Найдите в себе сегодняшней два плюса. Звучит просто, но бросают чаще всего именно на этом месте.</p></div>
-<div class="cta"><span class="eyebrow"><i class="dot"></i>Следующий шаг</span><div class="ttl">Хватит худеть по кругу</div><p class="sub">Материалы здесь дают первые шаги. Дальше нужен понятный порядок в питании, которого хватает на годы, а не на две недели. Об этом мой курс: как есть обычную еду, наедаться и снижать вес.</p><a class="cta-btn" href="https://spryginatatyana.ru/secret5?utm_source=instagram&amp;utm_medium=direct&amp;utm_campaign=secret_bot">Смотреть видеоурок<span class="ar">&#8594;</span></a></div>
+<div class="cta"><span class="eyebrow"><i class="dot"></i>Следующий шаг</span><div class="ttl">Хватит худеть по кругу</div><p class="sub">Материалы здесь дают первые шаги. Дальше нужен понятный порядок в питании, которого хватает на годы, а не на две недели. Об этом мой курс: как есть обычную еду, наедаться и снижать вес.</p><div class="cta-row"><a class="cta-btn" href="https://spryginatatyana.ru/secret5?utm_source=instagram&amp;utm_medium=direct&amp;utm_campaign=secret_bot">Смотреть видеоурок<span class="ar">&#8594;</span></a><a class="cta-btn alt" href="/#list">Все материалы<span class="ar">&#8594;</span></a></div></div>
 </article>
 <aside class="toc"><div class="h">На странице</div><a href="#sec-0">Сколько нужно стоять, чтобы это была остановка</a><a href="#sec-1">Семь проверок, когда вес встал</a><a href="#sec-2">Сон</a><a href="#sec-3">Движение без спорта</a><a href="#sec-4">Что делать сегодня</a></aside>
 </main>

@@ -98,6 +98,9 @@ border-radius:22px;background:rgba(255,255,255,.965);box-shadow:0 16px 40px rgba
 .card .ct{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.25;color:var(--text)}
 .card .cd{font-size:13.5px;color:var(--muted);line-height:1.5;flex:1;margin:0}
 .card .cm{font-family:var(--font-mono);font-size:10.5px;color:var(--muted)}
+.card .go{margin-top:6px;font-size:14.5px;font-weight:800;color:var(--cta);display:inline-flex;align-items:center;gap:7px}
+.card:hover .go .ar{transform:translateX(3px)}
+.card .go .ar{transition:transform .15s}
 .empty{font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--muted);padding:30px 0}
 /* ============ article ============ */
 .page{max-width:760px;margin:0 auto;padding:34px 44px 60px}
@@ -167,12 +170,14 @@ h1{font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing
 .mid a{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:999px;background:var(--ink);color:var(--offwhite);border:1px solid var(--ink)}
 :root[data-theme=dark] .mid a{background:var(--surface);border-color:var(--accent);color:var(--text)}
 /* ============ CTA ============ */
-.cta{margin:40px 0 6px;padding:34px 36px;border-radius:28px;background:linear-gradient(135deg,var(--bg-dark) 0%,var(--accent) 100%);color:#fff;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:10px 10px;box-shadow:0 18px 40px rgba(var(--tint-rgb),.18)}
+.cta{margin:40px 0 6px;padding:34px 36px;border-radius:28px;color:#fff;background-color:var(--bg-dark);background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(135deg,var(--bg-dark) 0%,var(--accent) 100%);background-size:10px 10px,auto;box-shadow:0 18px 40px rgba(var(--tint-rgb),.18)}
 .cta .ttl{font-family:var(--font-display);font-size:25px;font-weight:700;letter-spacing:-.02em;margin:10px 0 6px}
 .cta .sub{font-size:14.5px;line-height:1.55;color:rgba(245,245,240,.68);margin:0 0 20px;max-width:60ch}
-.cta .eyebrow{color:var(--accent-text)}
+.cta .eyebrow{color:var(--cta-hi)}
 .cta-btn{font-family:var(--font-body);font-size:15px;font-weight:800;padding:14px 24px;border-radius:999px;background:linear-gradient(180deg,var(--cta-hi),var(--cta));color:#fff;border:0;box-shadow:0 12px 26px rgba(0,0,0,.22);display:inline-flex;align-items:center;gap:9px}
 .cta-btn:hover{transform:translateY(-1px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.cta-btn.alt{background:transparent;border:1.6px solid rgba(255,255,255,.55);box-shadow:none;color:#fff}
 /* ============ footer ============ */
 .ft{border-top:1px solid var(--hair);background:#fff1e6;background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:9px 9px;padding:36px 0 26px}
 .ft-in{max-width:1340px;margin:0 auto;padding:0 44px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
@@ -192,10 +197,13 @@ h1{font-size:28px}
 .tabs{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 }
 @media(max-width:700px){
-.hd-in{height:60px;gap:12px}
-.hd-nav{display:none}
-.logo{font-size:16px}
-.hd-btn{font-size:12.5px;padding:9px 13px}
+.hd-in{height:auto;min-height:58px;gap:8px;flex-wrap:wrap;padding-top:8px;padding-bottom:6px}
+.hd-in .sp{display:none}
+.tools{margin-left:auto}
+.hd-nav{order:5;flex:1 0 100%;gap:18px;font-size:14.5px;border-top:1px solid var(--hair);padding-top:8px}
+.hd-nav a{padding:2px 0}
+.logo{font-size:14.5px}
+.hd-btn{font-size:12px;padding:9px 12px}
 .cards{grid-template-columns:1fr}
 .cta{padding:24px 20px}
 .cta .ttl{font-size:21px}
@@ -255,16 +263,16 @@ h1{font-size:28px}
 </div>
 <div class="count" id="count">7 материалов</div>
 <div class="cards">
-<a class="card" data-cat="cat-s-cego-nacat" href="/guide-pervaya-nedelya/"><div class="tag"><i class="d"></i>С чего начать</div><div class="ct">Первая неделя: с чего начать, чтобы вес пошёл вниз</div><p class="cd">Три действия на первую неделю и понятная цифра, сколько килограммов в месяц считается нормой именно для вашего веса.</p><div class="cm">Кодовое слово: УРОК</div></a>
-<a class="card" data-cat="cat-tarelka" href="/guide-tarelka/"><div class="tag"><i class="d"></i>Тарелка</div><div class="ct">Тарелка, после которой не хочется добавки</div><p class="cd">Как собрать завтрак, обед и ужин из обычных продуктов, чтобы наедаться и не считать калории.</p><div class="cm">Кодовое слово: МЕТОД</div></a>
-<a class="card" data-cat="cat-sryvy-i-vecer" href="/guide-vecher/"><div class="tag"><i class="d"></i>Срывы и вечер</div><div class="ct">Вечер у холодильника: почему тянет и что делать</div><p class="cd">Разбор четырёх причин вечернего зажора и приём на 30 секунд, который останавливает руку до того, как вы открыли дверцу.</p><div class="cm">Кодовое слово: ХОЧУ</div></a>
-<a class="card" data-cat="cat-privycki" href="/guide-privychki/"><div class="tag"><i class="d"></i>Привычки</div><div class="ct">Привычка вместо силы воли</div><p class="cd">Как закрепить новое питание так, чтобы через месяц оно шло само и не требовало от вас усилий.</p><div class="cm">Кодовое слово: СЕКРЕТ</div></a>
-<a class="card" data-cat="cat-eda-i-sem-a" href="/guide-semya/"><div class="tag"><i class="d"></i>Еда и семья</div><div class="ct">Один ужин на всю семью</div><p class="cd">Как перестать готовить себе отдельно и куда деваются лишние 300 калорий, которые вы съедаете за детьми.</p><div class="cm">Кодовое слово: СЕМЬЯ</div></a>
-<a class="card" data-cat="cat-kogda-ne-idet" href="/guide-ves-vstal/"><div class="tag"><i class="d"></i>Когда не идёт</div><div class="ct">Вес встал: что проверить, прежде чем всё бросить</div><p class="cd">Список из семи проверок по вашему же дню. Обычно вес стоит из-за одного пункта, и он находится за десять минут.</p><div class="cm">Кодовое слово: СТАРТ</div></a>
-<a class="card" data-cat="cat-mify" href="/guide-mify/"><div class="tag"><i class="d"></i>Мифы</div><div class="ct">Семь правил, из-за которых вы годами топчетесь на месте</div><p class="cd">Разбор советов, которые вы слышали сто раз, и что стоит делать вместо каждого из них.</p><div class="cm">Кодовое слово: МИФЫ</div></a>
+<a class="card" data-cat="cat-s-cego-nacat" href="/guide-pervaya-nedelya/"><div class="tag"><i class="d"></i>С чего начать</div><div class="ct">Первая неделя: с чего начать, чтобы вес пошёл вниз</div><p class="cd">Три действия на первую неделю и понятная цифра, сколько килограммов в месяц считается нормой именно для вашего веса.</p><div class="cm">Кодовое слово: УРОК</div><span class="go">Открыть урок<span class="ar">&#8594;</span></span></a>
+<a class="card" data-cat="cat-tarelka" href="/guide-tarelka/"><div class="tag"><i class="d"></i>Тарелка</div><div class="ct">Тарелка, после которой не хочется добавки</div><p class="cd">Как собрать завтрак, обед и ужин из обычных продуктов, чтобы наедаться и не считать калории.</p><div class="cm">Кодовое слово: МЕТОД</div><span class="go">Открыть урок<span class="ar">&#8594;</span></span></a>
+<a class="card" data-cat="cat-sryvy-i-vecer" href="/guide-vecher/"><div class="tag"><i class="d"></i>Срывы и вечер</div><div class="ct">Вечер у холодильника: почему тянет и что делать</div><p class="cd">Разбор четырёх причин вечернего зажора и приём на 30 секунд, который останавливает руку до того, как вы открыли дверцу.</p><div class="cm">Кодовое слово: ХОЧУ</div><span class="go">Открыть урок<span class="ar">&#8594;</span></span></a>
+<a class="card" data-cat="cat-privycki" href="/guide-privychki/"><div class="tag"><i class="d"></i>Привычки</div><div class="ct">Привычка вместо силы воли</div><p class="cd">Как закрепить новое питание так, чтобы через месяц оно шло само и не требовало от вас усилий.</p><div class="cm">Кодовое слово: СЕКРЕТ</div><span class="go">Открыть урок<span class="ar">&#8594;</span></span></a>
+<a class="card" data-cat="cat-eda-i-sem-a" href="/guide-semya/"><div class="tag"><i class="d"></i>Еда и семья</div><div class="ct">Один ужин на всю семью</div><p class="cd">Как перестать готовить себе отдельно и куда деваются лишние 300 калорий, которые вы съедаете за детьми.</p><div class="cm">Кодовое слово: СЕМЬЯ</div><span class="go">Открыть урок<span class="ar">&#8594;</span></span></a>
+<a class="card" data-cat="cat-kogda-ne-idet" href="/guide-ves-vstal/"><div class="tag"><i class="d"></i>Когда не идёт</div><div class="ct">Вес встал: что проверить, прежде чем всё бросить</div><p class="cd">Список из семи проверок по вашему же дню. Обычно вес стоит из-за одного пункта, и он находится за десять минут.</p><div class="cm">Кодовое слово: СТАРТ</div><span class="go">Открыть урок<span class="ar">&#8594;</span></span></a>
+<a class="card" data-cat="cat-mify" href="/guide-mify/"><div class="tag"><i class="d"></i>Мифы</div><div class="ct">Семь правил, из-за которых вы годами топчетесь на месте</div><p class="cd">Разбор советов, которые вы слышали сто раз, и что стоит делать вместо каждого из них.</p><div class="cm">Кодовое слово: МИФЫ</div><span class="go">Открыть урок<span class="ar">&#8594;</span></span></a>
 </div>
 <div class="empty" id="empty" style="display:none">В этом разделе пока пусто</div>
-<div class="cta"><span class="eyebrow"><i class="dot"></i>Следующий шаг</span><div class="ttl">Хватит худеть по кругу</div><p class="sub">Материалы здесь дают первые шаги. Дальше нужен понятный порядок в питании, которого хватает на годы, а не на две недели. Об этом мой курс: как есть обычную еду, наедаться и снижать вес.</p><a class="cta-btn" href="https://spryginatatyana.ru/secret5?utm_source=instagram&amp;utm_medium=direct&amp;utm_campaign=secret_bot">Смотреть видеоурок<span class="ar">&#8594;</span></a></div>
+<div class="cta"><span class="eyebrow"><i class="dot"></i>Следующий шаг</span><div class="ttl">Хватит худеть по кругу</div><p class="sub">Материалы здесь дают первые шаги. Дальше нужен понятный порядок в питании, которого хватает на годы, а не на две недели. Об этом мой курс: как есть обычную еду, наедаться и снижать вес.</p><div class="cta-row"><a class="cta-btn" href="https://spryginatatyana.ru/secret5?utm_source=instagram&amp;utm_medium=direct&amp;utm_campaign=secret_bot">Смотреть видеоурок<span class="ar">&#8594;</span></a><a class="cta-btn alt" href="/#list">Все материалы<span class="ar">&#8594;</span></a></div></div>
 </main>
 <footer class="ft"><div class="ft-in"><a class="logo" href="/">Татьяна<i class="sq"></i>Спрыгина</a><span class="sp"></span><nav class="ft-links"><a href="/">Все материалы</a><a href="/about/">Обо мне</a><a href="https://spryginatatyana.ru/secret5?utm_source=instagram&amp;utm_medium=direct&amp;utm_campaign=secret_bot">Смотреть видеоурок</a></nav></div><div class="ft-bot">Татьяна Спрыгина</div></footer>
 <script>
