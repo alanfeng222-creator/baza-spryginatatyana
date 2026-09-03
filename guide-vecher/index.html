@@ -59,16 +59,16 @@ a{color:inherit;text-decoration:none}
 .eyebrow .dot{width:32px;height:1.5px;background:var(--accent);opacity:.4;display:inline-block;flex:none;border-radius:2px}
 :root[data-theme=dark] .eyebrow .dot{background:var(--accent-hi);opacity:.55}
 /* ============ hero ============ */
-.hero{margin:26px 0 6px;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,#fffdf9 0%,#f4dfd0 58%,#d76a40 100%);color:var(--text);position:relative;min-height:340px;display:flex;border:1px solid var(--card-border);box-shadow:var(--shadow)}
+.hero{margin:26px 0 6px;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,var(--surface) 0%,#EFEAE5 58%,var(--accent) 100%);color:var(--text);position:relative;min-height:340px;display:flex;border:1px solid var(--card-border);box-shadow:var(--shadow)}
 .hero .art{position:absolute;inset:0;background:radial-gradient(circle at 88% 12%,rgba(var(--accent-rgb),.30),transparent 30%),radial-gradient(circle at 15% 85%,rgba(var(--accent-rgb),.10),transparent 38%)}
 /* the dot-grid and the accent bloom are the fallback look while there is no cover image yet;
    cover_css() turns them off as soon as site.hero_image is set (two of each only muddies it) */
-.hero .grid{position:absolute;inset:0;background-image:radial-gradient(rgba(126,71,47,.12) 1px,transparent 1px);background-size:14px 14px}
+.hero .grid{position:absolute;inset:0;background-image:radial-gradient(rgba(var(--tint-rgb),.12) 1px,transparent 1px);background-size:14px 14px}
 .hero .glow{position:absolute;right:-90px;top:-90px;width:420px;height:420px;border-radius:50%;background:var(--accent-hi);filter:blur(120px);opacity:.18}
 /* scrim keeps the copy on dark whatever the glow does behind it (on narrow screens the
    glow otherwise floods the whole card and the title lands on bright lime) */
 .hero .txt{position:relative;z-index:2;padding:44px 44px 38px;display:flex;flex-direction:column;max-width:760px;
-background:linear-gradient(100deg,rgba(255,253,249,.92) 0%,rgba(255,253,249,.76) 62%,transparent 100%)}
+background:linear-gradient(100deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.80) 62%,transparent 100%)}
 .hero .eyebrow{color:var(--accent);font-weight:800}
 /* hero is always the dark ink card, so its title must not follow --text (black on black in light theme) */
 .hero h1{font-family:var(--font-display);font-size:46px;font-weight:800;letter-spacing:-.025em;line-height:1.05;margin:18px 0 14px;max-width:17ch;color:var(--text)}
@@ -221,7 +221,7 @@ h1{font-size:28px}
 .tabs{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px}
 .tab{font-size:12.5px;padding:9px 8px}
 }
-.hero:not(.about-hero) .art{background:var(--ink) url('/assets/tatiana-hero.jpg') center right/cover no-repeat}.hero:not(.about-hero) .grid{display:none}.hero:not(.about-hero) .glow{display:none}@media(max-width:900px){.hero:not(.about-hero) .art{background-position:72% center}}.hero.about-hero{min-height:420px}.hero.about-hero .art{left:auto;right:0;width:50%;background:url('/assets/tatiana-about.jpg') right center/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 44%);mask-image:linear-gradient(90deg,transparent 0%,#000 44%)}.hero.about-hero .txt{max-width:50%;background:none}.hero.about-hero h1{font-size:32px;max-width:12ch}.hero.about-hero .desc{font-size:15px;max-width:30ch}@media(max-width:760px){.hero.about-hero{display:block;padding-top:210px}.hero.about-hero .art{left:0;right:0;width:100%;height:230px;background-position:center 22%;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 62%,transparent 100%)}.hero.about-hero .txt{max-width:100%;padding-top:6px}.hero.about-hero h1{font-size:27px;max-width:none}.hero.about-hero .desc{max-width:none}}</style>
+.hero:not(.about-hero) .art{background:var(--ink) url('/assets/tatiana-hero.jpg') center right/cover no-repeat}.hero:not(.about-hero) .grid{display:none}.hero:not(.about-hero) .glow{display:none}@media(max-width:900px){.hero:not(.about-hero) .art{background-position:72% center}}.hero.about-hero{min-height:520px}.hero.about-hero .art{left:auto;right:0;width:50%;background:url('/assets/tatiana-about.jpg') center 18%/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 44%);mask-image:linear-gradient(90deg,transparent 0%,#000 44%)}.hero.about-hero .txt{max-width:50%;background:none}.hero.about-hero h1{font-size:32px;max-width:12ch}.hero.about-hero .desc{font-size:15px;max-width:30ch}@media(max-width:760px){.hero.about-hero{display:block;padding-top:0}.hero.about-hero .art{position:static;inset:auto;width:100%;height:auto;aspect-ratio:3/4;background-position:center top;background-size:cover;-webkit-mask-image:linear-gradient(180deg,#000 86%,transparent 100%);mask-image:linear-gradient(180deg,#000 86%,transparent 100%)}.hero.about-hero .txt{max-width:100%;padding-top:18px;margin-top:-40px}.hero.about-hero h1{font-size:27px;max-width:none}.hero.about-hero .desc{max-width:none}}</style>
 <script>
 (function(){
   var d=document.documentElement;
