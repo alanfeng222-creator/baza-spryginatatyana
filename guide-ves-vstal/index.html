@@ -72,6 +72,11 @@ background:linear-gradient(100deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.80)
 .hero .eyebrow{color:var(--accent);font-weight:800}
 /* hero is always the dark ink card, so its title must not follow --text (black on black in light theme) */
 .hero h1{font-family:var(--font-display);font-size:46px;font-weight:800;letter-spacing:-.025em;line-height:1.05;margin:18px 0 14px;max-width:17ch;color:var(--text)}
+/* the index hero sits on a light scrim over dark art in BOTH themes, so its copy is pinned
+   to fixed dark values; about-hero has no scrim and keeps following the theme */
+.hero:not(.about-hero) h1{color:var(--ink)}
+.hero:not(.about-hero) .read{color:var(--ink)}
+:root[data-theme=dark] .hero.about-hero .desc{color:var(--muted)}
 .hero .desc{font-size:17px;line-height:1.62;color:#624537;max-width:54ch;margin:0;font-weight:500}
 .hero .read{margin-top:auto;padding-top:30px;display:inline-flex;align-items:center;gap:14px;color:var(--text);cursor:pointer;align-self:flex-start;font-weight:800}
 .hero .read .circ{width:52px;height:52px;border-radius:50%;background:linear-gradient(180deg,var(--accent-hi),var(--accent));display:grid;place-items:center;color:var(--accent-ink);flex:none;transition:transform .15s;box-shadow:0 12px 24px rgba(var(--accent-rgb),.25)}
@@ -187,7 +192,7 @@ h1{font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing
 .page{padding:26px 20px 50px}
 /* narrow: the copy sits ON the artwork (no room to dodge it), so the scrim goes near-opaque
    under the text and only clears near the bottom edge, where the art can breathe */
-.hero .txt{padding:30px 24px 26px;background:linear-gradient(180deg,color-mix(in srgb,var(--ink) 94%,transparent) 0%,color-mix(in srgb,var(--ink) 88%,transparent) 68%,color-mix(in srgb,var(--ink) 60%,transparent) 100%)}
+.hero .txt{padding:30px 24px 26px;background:linear-gradient(180deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.94) 74%,rgba(255,255,255,.78) 100%)}
 .hero .glow{width:240px;height:240px;right:-80px;top:-80px;opacity:.2}
 .hero h1{font-size:29px}
 .hero{min-height:0}
