@@ -69,8 +69,8 @@ a{color:inherit;text-decoration:none}
 .hero .glow{position:absolute;right:-90px;top:-90px;width:420px;height:420px;border-radius:50%;background:var(--accent-hi);filter:blur(120px);opacity:.18}
 /* scrim keeps the copy on dark whatever the glow does behind it (on narrow screens the
    glow otherwise floods the whole card and the title lands on bright lime) */
-.hero .txt{position:relative;z-index:2;padding:44px 44px 38px;display:flex;flex-direction:column;max-width:760px;
-background:linear-gradient(100deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.80) 62%,transparent 100%)}
+.hero .txt{position:relative;z-index:2;margin:22px;padding:34px 36px 30px;display:flex;flex-direction:column;max-width:640px;
+border-radius:22px;background:rgba(255,255,255,.965);box-shadow:0 16px 40px rgba(var(--tint-rgb),.20)}
 .hero .eyebrow{color:var(--accent-text);font-weight:800}
 /* the index hero keeps the dark accent: its copy sits on a near-white scrim in both themes */
 .hero:not(.about-hero) .eyebrow{color:var(--accent)}
@@ -81,7 +81,7 @@ background:linear-gradient(100deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.80)
 .hero:not(.about-hero) h1{color:var(--ink)}
 .hero:not(.about-hero) .read{color:var(--ink)}
 :root[data-theme=dark] .hero.about-hero .desc{color:var(--muted)}
-.hero .desc{font-size:17px;line-height:1.62;color:#624537;max-width:54ch;margin:0;font-weight:500}
+.hero .desc{font-size:17px;line-height:1.62;color:#4A3427;max-width:54ch;margin:0;font-weight:500}
 .hero .read{margin-top:auto;padding-top:30px;display:inline-flex;align-items:center;gap:14px;color:var(--text);cursor:pointer;align-self:flex-start;font-weight:800}
 .hero .read .circ{width:52px;height:52px;border-radius:50%;background:linear-gradient(180deg,var(--accent-hi),var(--accent));display:grid;place-items:center;color:var(--accent-ink);flex:none;transition:transform .15s;box-shadow:0 12px 24px rgba(var(--accent-rgb),.25)}
 .hero .read:hover .circ{transform:translateX(3px)}
@@ -196,7 +196,7 @@ h1{font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing
 .page{padding:26px 20px 50px}
 /* narrow: the copy sits ON the artwork (no room to dodge it), so the scrim goes near-opaque
    under the text and only clears near the bottom edge, where the art can breathe */
-.hero .txt{padding:30px 24px 26px;background:linear-gradient(180deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.94) 74%,rgba(255,255,255,.78) 100%)}
+.hero .txt{margin:14px;padding:26px 22px 24px;border-radius:18px;background:rgba(255,255,255,.975)}
 .hero .glow{width:240px;height:240px;right:-80px;top:-80px;opacity:.2}
 .hero h1{font-size:29px}
 .hero{min-height:0}
@@ -230,7 +230,7 @@ h1{font-size:28px}
 .tabs{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px}
 .tab{font-size:12.5px;padding:9px 8px}
 }
-.hero:not(.about-hero) .art{background:var(--ink) url('/assets/tatiana-hero.jpg') center right/cover no-repeat}.hero:not(.about-hero) .grid{display:none}.hero:not(.about-hero) .glow{display:none}@media(max-width:900px){.hero:not(.about-hero) .art{background-position:72% center}}.hero.about-hero{min-height:0;align-items:center;gap:38px;padding:40px;background:var(--surface)}.hero.about-hero .grid,.hero.about-hero .glow{display:none}.hero.about-hero .art{position:static;inset:auto;order:2;flex:0 0 320px;width:320px;aspect-ratio:3/4;background:var(--surface) url('/assets/tatiana-about.jpg') center top/cover no-repeat;border-radius:20px;box-shadow:0 20px 44px rgba(var(--tint-rgb),.26);-webkit-mask-image:none;mask-image:none}.hero.about-hero .txt{order:1;flex:1 1 auto;max-width:none;padding:0;background:none}.hero.about-hero h1{font-size:34px;max-width:15ch}.hero.about-hero .desc{font-size:16px;max-width:46ch;color:var(--muted)}@media(max-width:900px){.hero.about-hero{flex-direction:column;align-items:stretch;gap:22px;padding:22px}.hero.about-hero .art{order:1;flex:none;width:100%;max-width:320px;align-self:center}.hero.about-hero .txt{order:2}.hero.about-hero h1{font-size:27px;max-width:none}.hero.about-hero .desc{max-width:none}}</style>
+.hero:not(.about-hero) .art{background:var(--ink) url('/assets/tatiana-hero.jpg') center right/cover no-repeat}.hero:not(.about-hero) .grid{display:none}.hero:not(.about-hero) .glow{display:none}@media(max-width:900px){.hero:not(.about-hero) .art{background-position:72% center}}.hero.about-hero{min-height:0;align-items:center;gap:38px;padding:40px;background:var(--surface)}.hero.about-hero .grid,.hero.about-hero .glow{display:none}.hero.about-hero .art{position:static;inset:auto;order:2;flex:0 0 320px;width:320px;aspect-ratio:3/4;background:var(--surface) url('/assets/tatiana-about.jpg') center top/cover no-repeat;border-radius:20px;box-shadow:0 20px 44px rgba(var(--tint-rgb),.26);-webkit-mask-image:none;mask-image:none}.hero.about-hero .txt{order:1;flex:1 1 auto;max-width:none;margin:0;padding:0;background:none;box-shadow:none}.hero.about-hero h1{font-size:34px;max-width:15ch}.hero.about-hero .desc{font-size:16px;max-width:46ch;color:var(--muted)}@media(max-width:900px){.hero.about-hero{flex-direction:column;align-items:stretch;gap:22px;padding:22px}.hero.about-hero .art{order:1;flex:none;width:100%;max-width:320px;align-self:center}.hero.about-hero .txt{order:2;margin:0}.hero.about-hero h1{font-size:27px;max-width:none}.hero.about-hero .desc{max-width:none}}</style>
 <script>
 (function(){
   var d=document.documentElement;
