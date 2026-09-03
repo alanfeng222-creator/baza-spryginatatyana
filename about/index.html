@@ -191,9 +191,6 @@ h1{font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing
 @media(max-width:900px){
 .hd-in,.wrap,.ft-in,.ft-bot{padding-left:20px;padding-right:20px}
 .page{padding:26px 20px 50px}
-/* narrow: the copy sits ON the artwork (no room to dodge it), so the scrim goes near-opaque
-   under the text and only clears near the bottom edge, where the art can breathe */
-.hero .txt{margin:14px;padding:26px 22px 24px;border-radius:18px;background:rgba(255,255,255,.975)}
 .hero .glow{width:240px;height:240px;right:-80px;top:-80px;opacity:.2}
 .hero h1{font-size:29px}
 .hero{min-height:0}
@@ -209,7 +206,15 @@ h1{font-size:28px}
 .cards{grid-template-columns:1fr}
 .cta{padding:24px 20px}
 .cta .ttl{font-size:21px}
-.lead{font-size:18px}
+.lead{font-size:19px}
+/* phones are where her people read, so body copy goes up a notch and every button
+   becomes a full-width target instead of a small pill */
+.sec p,.p p,.sec ol,.sec ul{font-size:17px;line-height:1.62}
+.how{font-size:15.5px}
+.box{font-size:13.5px}
+.card .cd{font-size:14.5px}
+.linkbtn{font-size:16px}
+.cta-btn{width:100%;justify-content:center;padding:16px 20px;font-size:16px}
 .ft-in{gap:14px}
 }
 /* phone: logo + toggle + CTA must all survive on a 390px bar, so tighten the type
@@ -227,7 +232,7 @@ h1{font-size:28px}
 .tabs{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:7px}
 .tab{font-size:12.5px;padding:9px 8px}
 }
-.hero{flex-direction:column;align-items:stretch;gap:24px;padding:26px;min-height:0;background:var(--surface)}.hero .grid,.hero .glow{display:none}.hero .art{position:static;inset:auto;order:1;width:100%;max-width:390px;margin:0 auto;aspect-ratio:3/4;border-radius:20px;box-shadow:0 20px 44px rgba(var(--tint-rgb),.26);-webkit-mask-image:none;mask-image:none}.hero .txt{order:2;margin:0;padding:0;max-width:none;background:none;box-shadow:none;align-items:center;text-align:center}.hero h1{font-size:34px;max-width:22ch;margin:6px auto 12px;color:var(--text)}.hero .desc{font-size:16px;max-width:58ch;margin:0 auto;color:var(--muted)}.hero .eyebrow{color:var(--accent-text)}.hero .read{margin:22px auto 0;align-self:center;padding-top:0;color:var(--text)}@media(max-width:760px){.hero{padding:18px;gap:18px}.hero h1{font-size:27px}.hero .art{max-width:320px}}.hero:not(.about-hero) .art{background:var(--surface) url('/assets/tatiana-hero.jpg') center top/cover no-repeat}.hero.about-hero .art{background:var(--surface) url('/assets/tatiana-about.jpg') center top/cover no-repeat}</style>
+.hero{flex-direction:column;align-items:stretch;gap:24px;padding:26px;min-height:0;background:var(--surface)}.hero .grid,.hero .glow{display:none}.hero .art{position:static;inset:auto;order:1;width:100%;max-width:390px;margin:0 auto;aspect-ratio:3/4;border-radius:20px;box-shadow:0 20px 44px rgba(var(--tint-rgb),.26);-webkit-mask-image:none;mask-image:none}.hero .txt{order:2;margin:0;padding:0;max-width:none;background:none;box-shadow:none;align-items:center;text-align:center}.hero h1{font-size:34px;max-width:22ch;margin:6px auto 12px;color:var(--text)}.hero .desc{font-size:16px;max-width:58ch;margin:0 auto;color:var(--muted)}.hero .eyebrow{color:var(--accent-text)}.hero .read{margin:22px auto 0;align-self:center;padding-top:0;color:var(--text)}@media(max-width:760px){.hero{padding:18px;gap:18px}.hero h1{font-size:27px}.hero .art{max-width:340px}}@media(max-width:400px){.hero{padding:14px}.hero h1{font-size:24px}.hero .desc{font-size:15.5px}.hero .art{max-width:100%}}.hero:not(.about-hero) .art{background:var(--surface) url('/assets/tatiana-hero.jpg') center top/cover no-repeat}.hero.about-hero .art{background:var(--surface) url('/assets/tatiana-about.jpg') center top/cover no-repeat}</style>
 <script>
 (function(){
   var d=document.documentElement;
