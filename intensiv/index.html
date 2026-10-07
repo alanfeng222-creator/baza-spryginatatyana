@@ -152,6 +152,7 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
  .faq p{padding:0 20px 20px}
 }
 </style>
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(112712905,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/112712905" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
 </head>
 <body>
 
@@ -260,6 +261,18 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
  for(var i=0;i<box.length;i++)box[i].addEventListener('change',sync);
  for(var i=0;i<pay.length;i++)pay[i].addEventListener('click',function(e){if(!ok()){e.preventDefault();hint.hidden=false}});
  sync();
+})();
+</script>
+<script>
+// funnel goals: video play, every 10% watched, tariff clicks
+(function(){
+ function g(n){if(window.ym)ym(112712905,"reachGoal",n)}
+ var v=document.querySelector("video"),seen={};
+ if(v){v.addEventListener("play",function(){if(!seen.p){seen.p=1;g("urok_video_play")}});
+  v.addEventListener("timeupdate",function(){if(!v.duration)return;var p=Math.floor(v.currentTime/v.duration*10)*10;
+   for(var q=10;q<=p;q+=10)if(!seen[q]){seen[q]=1;g("urok_video_"+q)}});}
+ var a=document.querySelectorAll('a[href*="intensiv-30"],a[href*="intensiv-90"]');
+ for(var i=0;i<a.length;i++)a[i].addEventListener("click",function(){g(this.href.indexOf("intensiv-90")>-1?"urok_tarif_2900":"urok_tarif_1900")});
 })();
 </script>
 </body>
