@@ -272,6 +272,8 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
   v.addEventListener("timeupdate",function(){if(!v.duration)return;var p=Math.floor(v.currentTime/v.duration*10)*10;
    for(var q=10;q<=p;q+=10)if(!seen[q]){seen[q]=1;g("urok_video_"+q)}});}
  var a=document.querySelectorAll('a[href*="intensiv-30"],a[href*="intensiv-90"]');
+ // pass utm marks (bot client id in utm_term) on to the GetCourse order
+ if(location.search)for(var i=0;i<a.length;i++)a[i].href+=(a[i].href.indexOf("?")<0?"?":"&")+location.search.slice(1);
  for(var i=0;i<a.length;i++)a[i].addEventListener("click",function(){g(this.href.indexOf("intensiv-90")>-1?"urok_tarif_2900":"urok_tarif_1900")});
 })();
 </script>
