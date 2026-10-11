@@ -278,6 +278,9 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
  // pass utm marks (bot client id in utm_term) on to the GetCourse order
  if(location.search)for(var i=0;i<a.length;i++)a[i].href+=(a[i].href.indexOf("?")<0?"?":"&")+location.search.slice(1);
  for(var i=0;i<a.length;i++)a[i].addEventListener("click",function(){g(this.href.indexOf("intensiv-90")>-1?"urok_tarif_2900":"urok_tarif_1900")});
+ // tariff block came into view: the funnel step «дошли до блока тарифов»
+ var t=document.getElementById("tarif");
+ if(t&&window.IntersectionObserver)new IntersectionObserver(function(e,o){if(e[0].isIntersecting){g("urok_tarif_vidny");o.disconnect()}},{threshold:0.3}).observe(t);
 })();
 </script>
 </body>
