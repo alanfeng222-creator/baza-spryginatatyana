@@ -151,10 +151,15 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
  .faq summary{font-size:16px;padding:18px 58px 18px 20px}
  .faq p{padding:0 20px 20px}
 }
-.guar{max-width:760px;margin:0 auto 26px;text-align:left;border-top:6px solid var(--wine)}
-.guar h2{font-size:clamp(20px,2.6vw,26px);margin:0 0 14px;text-align:left}
-.guar p{margin-bottom:10px;color:var(--ink)}.guar p:last-child{margin-bottom:0}
-.guar b{color:var(--wine)}.guar .terms{font-size:13px;color:var(--txt)}.guar .terms a{color:var(--wine)}
+.guar{max-width:760px;margin:0 auto 26px;text-align:left;background:var(--wine);color:#fff;border-radius:var(--r);padding:30px 30px 22px;box-shadow:0 20px 40px -22px rgba(110,16,35,.8)}
+.guar h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 20px;text-align:center;color:#fff}
+.guar h2 em{color:var(--wine);background:#fff;padding:0 .18em;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.guar .g{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.1);border-radius:18px;padding:18px;margin-bottom:12px}
+.guar .gn{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--wine);font-weight:800;font-size:20px}
+.guar .g p{font-size:clamp(18px,2.2vw,21px);font-weight:600;line-height:1.45;color:#fff}
+.guar b{font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.guar .terms{font-size:13px;color:rgba(255,255,255,.8);text-align:center;margin-top:8px}.guar .terms a{color:#fff}
+@media(max-width:560px){.guar{padding:24px 16px 18px}.guar .g{gap:12px;padding:14px}.guar .gn{width:36px;height:36px;font-size:17px}.guar .g p{font-size:18px}}
 .exit{position:fixed;inset:0;z-index:50;background:rgba(23,23,23,.6);display:grid;place-items:center;padding:20px}
 .exit[hidden]{display:none}
 .exit .card{max-width:460px;width:100%;position:relative;text-align:center;border-top:6px solid var(--wine)}
@@ -173,11 +178,10 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
    <h1>Хватит бесконечно худеть. <em>Пора научиться удерживать вес!</em></h1>
    <p class="sub">Пошаговая система питания от эксперта по пищевым привычкам, с которой девушки едят борщ, шашлык, десерты, ходят в гости и держат вес без диет, спорта и подсчёта калорий.</p>
    <div class="video"><video src="video/prodayushchiy-rolik.mp4" poster="img/video-poster.webp" controls preload="none" playsinline style="width:100%;height:100%;display:block"></video></div>
-   <div class="card guar">
-    <h2>Двойная гарантия: <em>ты ничем не рискуешь</em></h2>
-    <p>Я даю тебе свою личную гарантию. На неё у тебя есть 14 дней с момента оплаты.</p>
-    <p><b>Первая гарантия</b> такая: если тебе не понравится интенсив или даже мой голос, напиши мне и в этот же день я верну деньги без вопросов и уловок.</p>
-    <p><b>Вторая гарантия</b> держится на том, что я очень уверена в методе, потому что каждый день вижу результаты у себя и у клиенток. Если ты по-честному применишь все рекомендации интенсива и не получишь эффекта, я верну тебе в два раза больше, чем ты заплатила.</p>
+   <div class="guar">
+    <h2>У меня есть <em>двойная гарантия</em></h2>
+    <div class="g"><span class="gn">1</span><p>Если ты купишь интенсив и тебе не понравится даже мой голос, <b>я верну тебе деньги</b>, тебе нужно только написать мне в личные сообщения.</p></div>
+    <div class="g"><span class="gn">2</span><p>Если ты внедришь абсолютно всё из моего интенсива и за две недели у тебя не будет результата, <b>я верну тебе двойную сумму</b>.</p></div>
     <p class="terms">Условия гарантии в пунктах 5.6–5.8 <a href="oferta.html" target="_blank">публичной оферты</a>.</p>
    </div>
    <a class="btn" href="#tarif">Получить доступ к интенсиву за 1 900 ₽</a>
