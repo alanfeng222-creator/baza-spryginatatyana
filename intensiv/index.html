@@ -151,6 +151,16 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
  .faq summary{font-size:16px;padding:18px 58px 18px 20px}
  .faq p{padding:0 20px 20px}
 }
+.guar{max-width:760px;margin:0 auto 26px;text-align:left;border-top:6px solid var(--wine)}
+.guar h2{font-size:clamp(20px,2.6vw,26px);margin:0 0 14px;text-align:left}
+.guar p{margin-bottom:10px;color:var(--ink)}.guar p:last-child{margin-bottom:0}
+.guar b{color:var(--wine)}.guar .terms{font-size:13px;color:var(--txt)}.guar .terms a{color:var(--wine)}
+.exit{position:fixed;inset:0;z-index:50;background:rgba(23,23,23,.6);display:grid;place-items:center;padding:20px}
+.exit[hidden]{display:none}
+.exit .card{max-width:460px;width:100%;position:relative;text-align:center;border-top:6px solid var(--wine)}
+.exit h3{font-size:22px;text-transform:uppercase;margin-bottom:14px;padding:0 26px}.exit p{color:var(--ink);margin-bottom:20px}
+.exit .btn{width:100%}.exit .x{position:absolute;top:10px;right:14px;background:none;border:0;font-size:28px;line-height:1;color:var(--txt);cursor:pointer}
+.exit .no{display:block;margin-top:12px;background:none;border:0;color:var(--txt);font-size:14px;text-decoration:underline;cursor:pointer;width:100%}
 </style>
 <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(112712905,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/112712905" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
 </head>
@@ -163,6 +173,13 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
    <h1>Хватит бесконечно худеть. <em>Пора научиться удерживать вес!</em></h1>
    <p class="sub">Пошаговая система питания от эксперта по пищевым привычкам, с которой девушки едят борщ, шашлык, десерты, ходят в гости и держат вес без диет, спорта и подсчёта калорий.</p>
    <div class="video"><video src="video/prodayushchiy-rolik.mp4" poster="img/video-poster.webp" controls preload="none" playsinline style="width:100%;height:100%;display:block"></video></div>
+   <div class="card guar">
+    <h2>Двойная гарантия: <em>ты ничем не рискуешь</em></h2>
+    <p>Я даю тебе свою личную гарантию. На неё у тебя есть 14 дней с момента оплаты.</p>
+    <p><b>Первая гарантия</b> такая: если тебе не понравится интенсив или даже мой голос, напиши мне и в этот же день я верну деньги без вопросов и уловок.</p>
+    <p><b>Вторая гарантия</b> держится на том, что я очень уверена в методе, потому что каждый день вижу результаты у себя и у клиенток. Если ты по-честному применишь все рекомендации интенсива и не получишь эффекта, я верну тебе в два раза больше, чем ты заплатила.</p>
+    <p class="terms">Условия гарантии в пунктах 5.6–5.8 <a href="oferta.html" target="_blank">публичной оферты</a>.</p>
+   </div>
    <a class="btn" href="#tarif">Получить доступ к интенсиву за 1 900 ₽</a>
    <ul class="checks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Доступ открывается сразу после оплаты</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Короткие видеоуроки + наглядные PDF-гайды</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Доступ на 30 или 90 дней, по тарифу</span></li></ul>
   </div>
@@ -281,6 +298,34 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
  // tariff block came into view: the funnel step «дошли до блока тарифов»
  var t=document.getElementById("tarif");
  if(t&&window.IntersectionObserver)new IntersectionObserver(function(e,o){if(e[0].isIntersecting){g("urok_tarif_vidny");o.disconnect()}},{threshold:0.3}).observe(t);
+})();
+</script>
+<div class="exit" id="exit" hidden role="dialog" aria-modal="true" aria-labelledby="exit-h">
+ <div class="card">
+  <button class="x" type="button" aria-label="Закрыть">&times;</button>
+  <h3 id="exit-h">Подожди, ты ничем не рискуешь</h3>
+  <p>На гарантию у тебя есть 14 дней с момента оплаты. Если интенсив не понравится, я верну деньги в тот же день. Если ты применишь все рекомендации и не получишь эффекта, я верну тебе в два раза больше.</p>
+  <a class="btn" href="#tarif">Выбрать тариф</a>
+  <button class="no" type="button">Нет, спасибо</button>
+ </div>
+</div>
+<script>
+// exit offer: desktop when the cursor leaves through the top edge, phone when the reader scrolls back up
+// (800px up) after reading a third of the page; once per session, never after a tariff click (Natalia 12.10.2026)
+(function(){
+ var el=document.getElementById("exit"),K="exit_shown";
+ function seen(){try{return sessionStorage.getItem(K)}catch(e){return 0}}
+ function show(){if(seen())return;try{sessionStorage.setItem(K,1)}catch(e){}el.hidden=false;if(window.ym)ym(112712905,"reachGoal","urok_exit_show")}
+ function hide(){el.hidden=true}
+ el.querySelector(".x").onclick=hide;el.querySelector(".no").onclick=hide;
+ el.addEventListener("click",function(e){if(e.target===el)hide()});
+ el.querySelector(".btn").addEventListener("click",function(){hide();if(window.ym)ym(112712905,"reachGoal","urok_exit_tarif")});
+ var pays=document.querySelectorAll(".pay");for(var i=0;i<pays.length;i++)pays[i].addEventListener("click",function(){try{sessionStorage.setItem(K,1)}catch(e){}});
+ document.addEventListener("mouseout",function(e){if(!e.relatedTarget&&e.clientY<=0)show()});
+ var maxY=0;
+ window.addEventListener("scroll",function(){var y=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  if(y>maxY)maxY=y;
+  if(maxY>h/3&&maxY-y>800)show()},{passive:true});
 })();
 </script>
 </body>
