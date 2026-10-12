@@ -326,6 +326,11 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
  el.querySelector(".btn").addEventListener("click",function(){hide();if(window.ym)ym(112712905,"reachGoal","urok_exit_tarif")});
  var pays=document.querySelectorAll(".pay");for(var i=0;i<pays.length;i++)pays[i].addEventListener("click",function(){try{sessionStorage.setItem(K,1)}catch(e){}});
  document.addEventListener("mouseout",function(e){if(!e.relatedTarget&&e.clientY<=0)show()});
+ // phone: the back button or back swipe opens the offer once; #tarif links scroll without a history entry
+ var as=document.querySelectorAll('a[href="#tarif"]'),tf=document.getElementById("tarif");
+ for(var k=0;k<as.length;k++)as[k].addEventListener("click",function(e){e.preventDefault();tf.scrollIntoView({behavior:"smooth"})});
+ if(history.pushState){history.pushState({exit:1},"",location.href);
+  window.addEventListener("popstate",function(){if(!seen()){show();history.pushState({exit:1},"",location.href)}else history.back()})}
  var maxY=0;
  window.addEventListener("scroll",function(){var y=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;
   if(y>maxY)maxY=y;
