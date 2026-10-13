@@ -184,7 +184,7 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
     <div class="g"><span class="gn">2</span><p>Если ты внедришь абсолютно всё из моего интенсива и за две недели у тебя не будет результата, <b>я верну тебе двойную сумму</b>.</p></div>
     <p class="terms">Условия гарантии в пунктах 5.6–5.8 <a href="oferta.html" target="_blank">публичной оферты</a>.</p>
    </div>
-   <a class="btn" href="#tarif">Получить доступ к интенсиву за 1 900 ₽</a>
+   <a class="btn" href="#programma">Посмотреть, что внутри интенсива</a>
    <ul class="checks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Доступ открывается сразу после оплаты</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Короткие видеоуроки + наглядные PDF-гайды</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Доступ на 30 или 90 дней, по тарифу</span></li></ul>
   </div>
  </div>
@@ -327,8 +327,8 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
  var pays=document.querySelectorAll(".pay");for(var i=0;i<pays.length;i++)pays[i].addEventListener("click",function(){try{sessionStorage.setItem(K,1)}catch(e){}});
  document.addEventListener("mouseout",function(e){if(!e.relatedTarget&&e.clientY<=0)show()});
  // phone: the back button or back swipe opens the offer once; #tarif links scroll without a history entry
- var as=document.querySelectorAll('a[href="#tarif"]'),tf=document.getElementById("tarif");
- for(var k=0;k<as.length;k++)as[k].addEventListener("click",function(e){e.preventDefault();tf.scrollIntoView({behavior:"smooth"})});
+ var as=document.querySelectorAll('a[href="#tarif"],a[href="#programma"]');
+ for(var k=0;k<as.length;k++)as[k].addEventListener("click",function(e){e.preventDefault();document.getElementById(this.getAttribute("href").slice(1)).scrollIntoView({behavior:"smooth"})});
  if(history.pushState){history.pushState({exit:1},"",location.href);
   window.addEventListener("popstate",function(){if(!seen()){show();history.pushState({exit:1},"",location.href)}else history.back()})}
  var maxY=0;
