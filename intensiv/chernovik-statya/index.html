@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<base href="/intensiv/">
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Хватит бесконечно худеть. Пора научиться удерживать вес!</title>
+<meta name="description" content="7-дневный практический онлайн-интенсив Татьяны Спрыгиной">
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+:root{--wine:#6e1023;--wine2:#8f1d38;--ink:#171717;--txt:#3a3434;--bg:#f1f1f1;--card:#fff;--soft:#f7eef0;--r:24px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,system-ui,sans-serif;background:var(--bg);color:var(--txt);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h1,h2,h3{color:var(--ink);font-weight:800;line-height:1.15}
+h2{font-size:clamp(26px,3.6vw,40px);text-transform:uppercase;text-align:center;letter-spacing:.01em;max-width:860px;margin:0 auto 40px}
+h2 em{font-style:normal;color:var(--wine)}
+h3{font-size:19px;margin-bottom:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:64px;padding:18px 40px;border-radius:18px;
+ background:linear-gradient(180deg,var(--wine2),var(--wine));color:#fff;font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.02em;
+ text-decoration:none;box-shadow:0 14px 30px -12px rgba(110,16,35,.65);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px -12px rgba(110,16,35,.75)}
+.card{background:var(--card);border-radius:var(--r);padding:30px 28px;box-shadow:0 10px 30px -18px rgba(60,10,20,.35),0 0 0 1px rgba(110,16,35,.06)}
+.checks{list-style:none;display:grid;gap:10px}
+.checks li{display:flex;gap:10px;align-items:flex-start}
+.checks svg{flex:none;width:22px;height:22px;margin-top:1px;fill:none;stroke:var(--wine);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.num{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--wine);color:#fff;font-weight:800;margin-bottom:16px}
+
+/* hero */
+.hero{padding:28px 0 64px;overflow:hidden}
+.hero .grid{max-width:980px;text-align:center}
+.hero .video{max-width:760px;margin-left:auto;margin-right:auto}
+.pre{display:inline-block;border:1.5px solid var(--ink);border-radius:999px;padding:8px 18px;font-size:14px;font-weight:600;margin-bottom:22px}
+.hero h1{font-size:clamp(30px,4.4vw,54px);text-transform:uppercase;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:#fff;background:var(--wine);padding:0 .18em;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hero .sub{font-size:19px;font-weight:500;color:var(--ink);max-width:600px;margin:0 auto 26px}
+.video{position:relative;aspect-ratio:16/9;border-radius:var(--r);background:#1d1a1b;display:grid;place-items:center;color:#cfc6c8;margin-bottom:26px;overflow:hidden}
+.video .play{width:78px;height:78px;border-radius:50%;background:var(--wine);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(143,29,56,.25)}
+.video .play svg{width:30px;height:30px;fill:#fff;margin-left:5px}
+.video small{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.hero .checks{width:fit-content;margin:22px auto 0;font-weight:500;color:var(--ink);text-align:left}
+
+/* pain */
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.out{margin:34px auto 0;max-width:860px;background:var(--wine);color:#fff;border-radius:var(--r);padding:30px 34px;font-size:19px;font-weight:600;text-align:center}
+
+/* author */
+.author{background:var(--card)}
+.author .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.author .ba{border-radius:var(--r);overflow:hidden;box-shadow:0 20px 40px -24px rgba(0,0,0,.45)}
+.author .ba figcaption{display:flex;justify-content:space-around;background:var(--ink);color:#fff;font-weight:700;font-size:14px;text-transform:uppercase;padding:10px}
+.author h2{text-align:left;margin:0 0 8px}
+.author .name{font-family:'Playfair Display',serif;font-size:34px;color:var(--wine);margin-bottom:14px}
+.author .role{margin-bottom:22px}
+.author .checks{gap:14px;margin-bottom:22px;color:var(--ink)}
+.author .quote{border-left:4px solid var(--wine);padding:6px 0 6px 20px;font-style:italic}
+
+/* kity */
+.kit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+/* program */
+.prog{background:var(--ink);color:#e9e2e3}
+.prog h2{color:#fff;margin-bottom:12px}
+.prog .lead{text-align:center;margin-bottom:40px;color:#cbbfc1}
+.days{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.day{background:var(--wine);border-radius:var(--r);padding:28px}
+.day:last-child{grid-column:1/-1;max-width:calc(50% - 10px);justify-self:center}
+.day .pill{display:inline-block;background:#fff;color:var(--wine);font-weight:800;border-radius:999px;padding:6px 16px;font-size:14px;text-transform:uppercase;margin-bottom:14px}
+.day h3{color:#fff;font-size:20px}
+.day p{color:#f3e6e9}
+.day .bonus{margin-top:14px;background:rgba(255,255,255,.12);border-radius:14px;padding:10px 14px;font-weight:700;color:#fff}
+.day .bonus::before{content:"+ ";}
+
+/* format */
+.fmt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.fmt .ic{width:48px;height:48px;padding:11px;border-radius:14px;background:var(--soft);fill:none;stroke:var(--wine);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
+.fmt h3{font-size:17px}
+.fmt p{font-size:15px}
+
+/* reviews */
+.revs{columns:2;column-gap:22px;max-width:960px;margin:0 auto}
+.rev{break-inside:avoid;margin-bottom:22px}
+.rev img{margin:0 auto;border-radius:18px;background:#fff;box-shadow:0 8px 26px rgba(23,23,23,.08)}
+
+/* tariff */
+.tarif .box{max-width:760px;margin:0 auto;background:var(--card);border-radius:32px;padding:40px 44px;box-shadow:0 24px 50px -28px rgba(110,16,35,.55);border-top:8px solid var(--wine)}
+.tarif .tname{font-size:22px;font-weight:800;color:var(--ink);text-align:center;margin-bottom:26px}
+.tarif .checks{gap:12px;color:var(--ink);font-weight:500}
+.tarif .pdfh{margin:18px 0 12px;font-weight:700;color:var(--wine)}
+.tarif .pdf{padding-left:32px}
+.tarif .end{margin-top:12px}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px}
+.opt{border:2px solid var(--soft);border-radius:22px;padding:24px 20px;text-align:center;display:flex;flex-direction:column}
+.opt .term{font-weight:700;color:var(--ink);font-size:18px}
+.opt .new{font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--wine);margin:6px 0 18px}
+.opt .extra{text-align:left;font-size:15px;margin:0 0 20px;gap:8px}
+.opt .extra li.no{color:#a39a9c}
+.opt .extra li.no span{text-decoration:line-through}
+.opt .extra li.no svg{stroke:#a39a9c}
+.opt .extra li.plus{color:#1f7a3a;font-weight:700;background:#e6f4ea;border-radius:10px;padding:4px 8px;margin:0 -8px}
+.opt .extra li.plus svg{stroke:#1f7a3a}
+.tarif .btn{width:100%;margin-top:auto;padding:18px 16px;font-size:15px}
+.tarif .agree:first-of-type{margin-top:30px}
+.tarif .btn.off{opacity:.45}
+.agree{display:flex;gap:12px;align-items:flex-start;margin:0 0 14px;font-size:15px;color:var(--txt);cursor:pointer}
+.agree input{flex:none;width:22px;height:22px;margin-top:1px;accent-color:var(--wine);cursor:pointer}
+.agree a,footer a{color:inherit;text-decoration:underline}
+.agree-hint{margin:0 0 14px;color:var(--wine);font-weight:700;font-size:15px}
+
+/* faq */
+.faq-list{max-width:860px;margin:0 auto;display:grid;gap:14px}
+.faq{background:var(--card);border-radius:20px;box-shadow:0 8px 24px -18px rgba(60,10,20,.35)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 64px 22px 26px;font-weight:700;color:var(--ink);font-size:18px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{position:absolute;right:22px;top:50%;width:28px;height:28px;margin-top:-14px;border-radius:50%;background:var(--soft)}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:8px;right:8px;top:13px;height:2px;background:var(--wine);transition:transform .2s}
+.faq summary i::after{transform:rotate(90deg)}
+.faq[open] summary i::after{transform:rotate(0)}
+.faq p{padding:0 26px 24px}
+
+/* final */
+.final{background:linear-gradient(160deg,#2a0a12,var(--wine));color:#fff;text-align:center}
+.final h2{color:#fff;margin-bottom:14px}
+.final p{font-size:20px;font-weight:500;margin-bottom:34px;color:#f3e6e9}
+.final .btn{background:#fff;color:var(--wine);box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;font-size:14px;line-height:1.9}
+
+@media (hover:none){.btn:hover{transform:none}}
+@media (max-width:960px){
+ .author .grid{grid-template-columns:1fr}
+ .kit-grid{grid-template-columns:1fr}
+ .fmt-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+ body{font-size:16px}
+ section{padding:54px 0}
+ h2{margin-bottom:28px}
+ .hero{text-align:center}
+ .hero .sub{font-size:17px}
+ .btn{width:100%;padding:18px 20px;font-size:15px}
+ .pain-grid,.days,.fmt-grid{grid-template-columns:1fr}
+ .day:last-child{max-width:none}
+ .card{padding:24px 22px}
+ .out{padding:24px 22px;font-size:17px}
+ .revs{columns:1}
+ .tarif .box{padding:30px 22px}
+ .tarif .pdf{padding-left:0}
+ .opts{grid-template-columns:1fr}
+ .faq summary{font-size:16px;padding:18px 58px 18px 20px}
+ .faq p{padding:0 20px 20px}
+}
+.guar{max-width:760px;margin:0 auto 26px;text-align:left;background:var(--wine);color:#fff;border-radius:var(--r);padding:30px 30px 22px;box-shadow:0 20px 40px -22px rgba(110,16,35,.8)}
+.guar h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 20px;text-align:center;color:#fff}
+.guar h2 em{color:var(--wine);background:#fff;padding:0 .18em;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.guar .g{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.1);border-radius:18px;padding:18px;margin-bottom:12px}
+.guar .gn{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--wine);font-weight:800;font-size:20px}
+.guar .g p{font-size:clamp(18px,2.2vw,21px);font-weight:600;line-height:1.45;color:#fff}
+.guar b{font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.guar .terms{font-size:13px;color:rgba(255,255,255,.8);text-align:center;margin-top:8px}.guar .terms a{color:#fff}
+@media(max-width:560px){.guar{padding:24px 16px 18px}.guar .g{gap:12px;padding:14px}.guar .gn{width:36px;height:36px;font-size:17px}.guar .g p{font-size:18px}}
+.exit{position:fixed;inset:0;z-index:50;background:rgba(23,23,23,.6);display:grid;place-items:center;padding:20px}
+.exit[hidden]{display:none}
+.exit .card{max-width:460px;width:100%;position:relative;text-align:center;border-top:6px solid var(--wine)}
+.exit h3{font-size:22px;text-transform:uppercase;margin-bottom:14px;padding:0 26px}.exit p{color:var(--ink);margin-bottom:20px}
+.exit .btn{width:100%}.exit .x{position:absolute;top:10px;right:14px;background:none;border:0;font-size:28px;line-height:1;color:var(--txt);cursor:pointer}
+.exit .no{display:block;margin-top:12px;background:none;border:0;color:var(--txt);font-size:14px;text-decoration:underline;cursor:pointer;width:100%}
+</style>
+
+<style>
+.inv{max-width:640px;margin:0 auto 26px;text-align:left}
+.inv h2{font-size:20px;text-transform:none;text-align:left;margin:0 0 12px}
+.next{max-width:760px;margin:10px auto 0;text-align:center}
+.next h2{margin-bottom:14px}
+.next p{margin:0 auto 22px;max-width:620px}
+.next .checks{width:fit-content;margin:20px auto 0;text-align:left;font-weight:500;color:var(--ink)}
+.can{max-width:820px;margin:0 auto}
+.can .checks{gap:12px;font-weight:500;color:var(--ink)}
+.day .res{margin:6px 0 12px;font-weight:700;color:#fff}
+.day ul{list-style:none;display:grid;gap:8px;margin-bottom:12px}
+.day li{padding-left:18px;position:relative;color:#f3e6e9}
+.day li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:#fff}
+.day .task{background:rgba(255,255,255,.12);border-radius:14px;padding:10px 14px;color:#fff;font-weight:600}
+.vrevs{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.vrev{display:flex;flex-direction:column;gap:12px}
+.vrev .vbox{position:relative;width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#1d1a1b}
+.vrev iframe,.vrev video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.vrev p{font-size:15px;color:var(--ink)}
+.vrevs+h2{margin-top:64px}
+@media(max-width:980px){.vrevs{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.vrevs{grid-template-columns:repeat(2,1fr);gap:12px}.vrev p{font-size:14px}}
+</style>
+<style>
+.art{max-width:720px;margin:0 auto;padding:0 20px}
+.art p{font-size:18px;line-height:1.65;color:var(--ink);margin-bottom:18px}
+.art h2{margin-bottom:28px}
+.asec{padding:56px 0}
+.asec.alt{background:var(--card)}
+.art p.out{margin:26px 0 0;color:#fff}
+.acards{display:grid;gap:18px;margin-top:8px}
+.acards .card h3{color:var(--wine)}
+.acards .card p{font-size:17px;margin:0}
+.afig{margin:8px 0 24px;border-radius:var(--r);overflow:hidden;box-shadow:0 20px 40px -24px rgba(0,0,0,.45)}
+.afig figcaption{display:flex;justify-content:space-around;background:var(--ink);color:#fff;font-weight:700;font-size:14px;text-transform:uppercase;padding:10px}
+.case{background:var(--card);border-radius:var(--r);overflow:hidden;margin-bottom:24px;box-shadow:0 10px 30px -18px rgba(60,10,20,.35)}
+.case img{width:100%}
+.case div{padding:24px 26px 8px}
+.case h3{color:var(--wine);font-size:20px}
+.case p{font-size:17px}
+.optvideo{padding:56px 0;text-align:center}
+.optvideo .video{max-width:760px;margin:22px auto 0}
+.cta{text-align:center;margin-top:30px}
+.final h2 em{color:#f3c9d2}
+</style>
+</head>
+<body>
+<section class="hero"><div class="wrap grid"><div>
+<span class="pre">Статья Татьяны Спрыгиной · 7 минут чтения</span><h1>Хватит бесконечно худеть. <em>Пора научиться удерживать вес!</em></h1><p class="sub">Здесь я расскажу, почему после каждой диеты вес возвращается с прибавкой. А ещё расскажу, как я сама почти 15 лет держу 50 кг, хотя мороженое лежит у меня в морозилке постоянно.</p>
+<a class="btn" href="#tarif">Сразу к тарифам</a></div></div></section>
+<section class="asec"><div class="art"><h2>Сколько раз <em>ты уже худела?</em></h2><p>Скажи честно, сколько раз в жизни ты уже худела: два, пять, десять? Думаю, сбрасывать вес ты давно умеешь. Ты знаешь, как закрыть рот на замок, как продержаться две недели на куриной грудке с огурцом, как пить воду литрами и терпеть голод до вечера. К лету, к свадьбе, к отпуску или к Новому году у тебя всё получается.</p><p>А теперь вспомни, что было потом, когда нужная цифра на весах наконец появлялась. Наступали обычные будни: день рождения подруги, аврал на работе или просто усталость в конце недели. Ты съедала кусочек торта, после чего в голове щёлкало знакомое «сгорел сарай, гори и хата». Запреты рушились, килограммы возвращались очень быстро и приводили с собой ещё парочку новых.</p><p>После этого обычно остаётся одна мысль: со мной что-то не так, у меня просто нет силы воли.</p><p class="out">Услышь меня, пожалуйста: с тобой всё в порядке. Тебя много раз учили худеть, но ни разу не учили удерживать вес.</p></div></section>
+<section class="asec alt"><div class="art"><h2>Почему вес возвращается <em>после каждой диеты</em></h2><p>Интернет завален марафонами, готовыми меню и обещаниями минус 5 кг за неделю. Похудеть на силе воли может почти каждая. Остаться в этом весе надолго, без страха перед едой и без срывов, гораздо сложнее. Этому почти никто не учит. Вот что обычно приводит к откату.</p><div class="acards"><article class="card"><span class="num">1</span><h3>Диета всегда заканчивается</h3><p>Диета или марафон это проект со сроком: тебе говорят потерпеть месяц. Ты терпишь, а организм воспринимает голод как угрозу. Как только срок вышел и правила убрали, он начинает запасать впрок на случай следующей голодовки, а как жить после диеты, тебе никто не объяснял.</p></article><article class="card"><span class="num">2</span><h3>Запреты ломаются от первого кусочка</h3><p>На диете тебе дают список запрещённых продуктов, но жить в стерильных условиях невозможно. Приходят выходные, ты съедаешь кусочек торта и решаешь, что раз уж нарушила, можно съесть всё подряд и начать заново со следующей недели. Такой зажор часто растягивается на целую неделю.</p></article><article class="card"><span class="num">3</span><h3>Сил на постоянный контроль не хватает</h3><p>Каждый день приходится решать, что можно, что нельзя и сколько граммов положить. К вечеру сила воли заканчивается у всех, поэтому рука сама тянется к холодильнику. На длинной дистанции работает только система привычек, где ничего не нужно решать каждый раз заново.</p></article></div></div></section>
+<section class="asec"><div class="art"><h2>Как я сама <em>перестала бесконечно худеть</em></h2><figure class="afig"><img src="img/do-posle.webp" alt="Татьяна Спрыгина до и после" width="1000" height="739" loading="lazy"><figcaption><span>До</span><span>После</span></figcaption></figure><p>Всю боль срывов я знаю изнутри. Когда-то мой вес доходил до 80 кг. Я так же худела, радовалась результату, срывалась, ругала себя и снова набирала. Так продолжалось, пока я не поняла: временная диета даёт только временный результат.</p><p>Тогда я перестроила свои пищевые привычки. Нормальное питание стало моим образом жизни. Я сбросила 30 кг и почти 15 лет держу вес 50 кг. Калории я не считаю, спортом ради похудения не занимаюсь, ем три раза в день, а в морозилке у меня постоянно лежит мороженое. Я не держусь из последних сил, мне так просто удобно жить. Мои дети едят ту же еду, что и я.</p></div></section>
+<section class="asec alt"><div class="art"><h2>На чём держится вес, <em>который не возвращается</em></h2><div class="acards"><article class="card"><span class="num">1</span><h3>Сытная еда без подсчёта калорий</h3><p>Подсчёт калорий и взвешивание еды бросают почти все уже через две недели. Я их хорошо понимаю. Вместо этой математики ты научишься собирать тарелку из обычных продуктов: мясо, рыба, макароны, картошка, хлеб и свежие овощи. После такой еды сытости хватает на 4-5 часов, поэтому до следующей еды есть просто не хочется.</p></article><article class="card"><span class="num">2</span><h3>Сладкое остаётся в твоей жизни</h3><p>Десерты мы не вычёркиваем ни пока вес уходит, ни после. Вес растёт, когда общая калорийность рациона слишком высокая. Сладкое при этом влияет на вес не больше остальной еды. В третьем дне интенсива я рассказываю, как выбирать лёгкие сладости в магазине. Там же я даю свой главный инструмент, метод смакования. Шоколад и мороженое остаются с тобой, талия при этом остаётся на месте.</p></article><article class="card"><span class="num">3</span><h3>Спокойствие вместо паники на весах</h3><p>Ты перестанешь пугаться цифр. Плюс 2 кг наутро после дня рождения это вода от соли и углеводов, которая уходит за пару дней. Ещё ты научишься за 30 секунд отличать голод от усталости и скуки. Тогда вечерние походы к холодильнику закончатся.</p></article></div></div></section>
+<section class="asec"><div class="art"><h2>Что изменилось <em>у моих клиенток</em></h2><article class="case"><img src="img/dz-d8.jpg" alt="Ирина: минус 15 кг за 2,5 месяца" loading="lazy"><div><h3>Ирина: минус 15 кг за 2,5 месяца</h3><p>Ко мне она пришла с весом 102 кг и носила 58-60 размер. Через 2,5 месяца весы показали 87, а размер одежды стал 52-54. Однажды утром она написала мне, что достала шорты, которым 15 лет. Раньше они не налезали ей даже на бёдра. В тот день она надела их легко. Ещё Ирина написала: «Вы поменяли всё моё отношение к еде, что привело к радости от своей внешности». Главное в её истории: она наконец перестала бояться еды.</p></div></article><article class="case"><img src="img/dz-d6.jpg" alt="Месяц разницы" loading="lazy"><div><h3>Месяц разницы</h3><p>Между этими фото месяц нашей работы. Лицо заметно похудело, разницу видно безо всяких весов. Когда она прислала мне этот коллаж, я ответила ей: «Ну красотка, любуюсь и радуюсь». Темп у всех свой и зависит от стартового веса.</p></div></article><article class="case"><img src="img/dz-d7.jpg" alt="Одна и та же кофта" loading="lazy"><div><h3>Одна и та же кофта</h3><p>На обоих фото клиентка в одной и той же кофте. Посмотри, как эта кофта сидела раньше и как сидит теперь: разница видна и без цифр на весах. Праздники и застолья у неё никуда не делись, потому что я учу худеть вместе с ними.</p></div></article></div></section>
+<section class="reviews">
+ <div class="wrap">
+  <h2>Что говорят те, кто <em>прошёл мои программы</em></h2>
+  <div class="vrevs"><figure class="vrev"><div class="vbox"><video src="/intensiv/video/otzyv-97uCXkTM.mp4" poster="/intensiv/video/otzyv-97uCXkTM.jpg" controls preload="none" playsinline></video></div><p>«Ела всё, что хотела: пила алкоголь, ходила на дни рождения, ела после шести и не считала калории. Минус 7 кг».</p></figure><figure class="vrev"><div class="vbox"><video src="/intensiv/video/otzyv-mZitnheE.mp4" poster="/intensiv/video/otzyv-mZitnheE.jpg" controls preload="none" playsinline></video></div><p>«Ела то же, что и вся семья, минус 6 кг без малейших усилий. И главное, знаю, как держать вес дальше».</p></figure><figure class="vrev"><div class="vbox"><video src="/intensiv/video/otzyv-kAPJZRrQ.mp4" poster="/intensiv/video/otzyv-kAPJZRrQ.jpg" controls preload="none" playsinline></video></div><p>«112 кг, двое детей, заедала по ночам от стресса. Минус 8 кг без жёстких диет, даже застолья не сбивают результат».</p></figure><figure class="vrev"><div class="vbox"><iframe src="https://kinescope.io/embed/iEoPiRdS4s9E9QSaHMobAC" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen loading="lazy"></iframe></div><p>«Минус 8 кг и бодрость, встаю без будильника. Раньше считала себя сладкоежкой, теперь даже не уверена в этом».</p></figure><figure class="vrev"><div class="vbox"><iframe src="https://kinescope.io/embed/5ea69yYrCG9EmrQM8cMG5o" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen loading="lazy"></iframe></div><p>«Минус 8 кг у меня и минус 5 у мужа: ели одно, готовила одна. Просто, вкусно, без отдельных кастрюль».</p></figure><figure class="vrev"><div class="vbox"><video src="/intensiv/video/otzyv-dAbwSuBM.mp4" poster="/intensiv/video/otzyv-dAbwSuBM.jpg" controls preload="none" playsinline></video></div><p>«Минус 9 кг. Научилась готовить вкусно, поменяла мышление. Теперь могу сама, у меня всё для этого есть».</p></figure><figure class="vrev"><div class="vbox"><video src="/intensiv/video/otzyv-tFuCmXnh.mp4" poster="/intensiv/video/otzyv-tFuCmXnh.jpg" controls preload="none" playsinline></video></div><p>«15 лет с лишним весом, 112 кг, маленький ребёнок. Минус 12 кг: ем что хочу, сладкое, после шести. Не голодаю».</p></figure><figure class="vrev"><div class="vbox"><iframe src="https://kinescope.io/embed/wu7KaYbhxewd5kGAgG22Bg" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen loading="lazy"></iframe></div><p>«Минус 8,5 кг без диет, научилась правильно сочетать еду. Даже сгущёнку можно».</p></figure></div>
+  <h2>Они тоже думали, что у них <em>нет силы воли</em></h2>
+  <div class="revs"><figure class="rev"><img src="img/rev3.webp" alt="Отзыв участницы" loading="lazy" width="774" height="223"></figure><figure class="rev"><img src="img/rev4.webp" alt="Отзыв участницы" loading="lazy" width="900" height="1153"></figure><figure class="rev"><img src="img/rev5.webp" alt="Отзыв участницы" loading="lazy" width="900" height="835"></figure></div>
+ </div>
+</section>
+<section class="asec alt"><div class="art"><h2>Всё это я собрала в интенсив <em>«Вес под контролем»</em></h2><p>Чтобы тебе не пришлось тратить годы на пробы и ошибки, как это делала я, я разложила всё по шагам в 7-дневный интенсив. Нудных лекций там нет. В интенсиве три видеоурока и PDF с конспектами, а на каждый из семи дней у тебя одно простое задание. На это уходит 10-15 минут в день, открыть всё можно с телефона в любое удобное время.</p></div></section>
+<section class="prog" id="programma">
+ <div class="wrap">
+  <h2>Что внутри интенсива: 7 дней по шагам</h2>
+  <p class="lead">В интенсиве три видеоурока и PDF с конспектами, а на каждый день у тебя одно простое задание. Уроки открываются по порядку в личном кабинете.</p>
+  <div class="days"><article class="day"><span class="pill">День 1.</span><h3>Старт и точка отсчёта</h3><p class="res">Поймёшь, почему прошлые диеты заканчивались срывом, и начнёшь с честной точки отсчёта.</p><ul><li>Почему диеты и марафоны заканчивались срывом и почему цель теперь звучит как «сбросить и сохранить».</li><li>Правила интенсива: не голодаем, не считаем калории, не взвешиваем еду и не выматываем себя спортом.</li><li>Три договора с собой, которые помогут дойти до конца недели.</li></ul><p class="task">Задание: записать вес и объёмы, вспомнить вес, в котором ты себе нравилась, и сделать три фото для себя.</p></article><article class="day"><span class="pill">День 2.</span><h3>Конструктор тарелки</h3><p class="res">Научишься собирать сытную тарелку из обычных продуктов, дома, в гостях и в кафе.</p><ul><li>Схема тарелки, которая работает без меню и рецептов.</li><li>Почему орехами и попкорном не наешься.</li><li>Простая мерка 200 ккал на 100 г вместо подсчёта калорий: как читать этикетки и где прячутся лишние калории в соусах и заправках.</li></ul><p class="task">Задание: завтра собрать одну тарелку по схеме.</p></article><article class="day"><span class="pill">День 3.</span><h3>Как есть сладкое и сохранять фигуру</h3><p class="res">Сладкое остаётся в твоём рационе и не мешает фигуре.</p><ul><li>Почему фигуре мешает жир, который лежит в сладком рядом с сахаром.</li><li>Как в магазине отличить лёгкую полку от тяжёлой и почему модные «полезные» десерты по калорийности не уступают торту.</li><li>Как смаковать маленькую порцию и отличить настоящий голод от желания заесть скуку.</li></ul><p class="task">В PDF к уроку пять рецептов домашних десертов из творога.</p></article><article class="day"><span class="pill">День 4.</span><h3>Еда вне дома</h3><p class="res">Получишь готовое решение для пяти ситуаций, в которых чаще всего срывается питание.</p><ul><li>День на бегу, обед на работе, кафе, вечер без сил готовить, застолье и гости.</li><li>Еда на 10 минут из морозилки на вечер, когда нет сил стоять у плиты.</li><li>Главное правило урока: голодной никуда не приезжаем.</li></ul><p class="task">Задание: выбрать свою частую ситуацию и заранее решить, как ты в ней поступишь.</p></article><article class="day"><span class="pill">День 5.</span><h3>Переела, что делать дальше</h3><p class="res">После застолья спокойно вернёшься к обычной еде, без голодных дней и чувства вины.</p><ul><li>Откуда наутро после застолья плюс на весах и почему это вода, которая уходит за два-три дня.</li><li>Как выйти из круга «сорвалась, уже всё равно, вина, новая диета».</li><li>План на два дня после переедания и четыре вещи, которые делать нельзя.</li></ul><p class="task">Задание: выписать план себе в заметки.</p></article><article class="day"><span class="pill">День 6.</span><h3>Весы под контролем (в тарифе на 90 дней)</h3><p class="res">Найдёшь свой коридор веса и научишься замечать первые признаки отката.</p><ul><li>Почему вес гуляет на 1,5–2,5 кг за сутки и как взвешиваться, чтобы цифра говорила правду.</li><li>Как посчитать свой коридор веса и сравнивать неделю с неделей вместо одного утра с другим.</li><li>Когда вес правда встал и что мягко поправить, если так.</li></ul><p class="task">К уроку таблица-трекер, которая считает всё сама.</p></article><article class="day"><span class="pill">День 7.</span><h3>Вечерние зажоры</h3><p class="res">Вечером перестанет тянуть к холодильнику, а система останется с тобой после интенсива.</p><ul><li>Почему вечерняя тяга к еде начинается ещё днём: проверяем это тремя вопросами про вчерашний день.</li><li>Как за 30 секунд отличить голод от усталости, злости или скуки.</li><li>Если ты голодна, ешь спокойно, правило «не есть после шести» выбрасываем. Если это не голод, договариваемся с собой в три шага.</li></ul><p class="task">Задание: поесть нормально днём и записать в заметки один вечерний момент.</p></article></div>
+ </div>
+</section>
+<section class="asec"><div class="art"><h2>Сколько стоит <em>интенсив</em></h2><p>Доступ на 30 дней стоит 1 900 ₽, на 90 дней 2 900 ₽. Это примерно как один раз сходить поесть в кафе. Взамен у тебя остаётся система, с которой больше не нужно начинать сначала. В тариф на 90 дней входит шестой день «Весы под контролем» с таблицей-трекером: ты найдёшь свой коридор веса и сможешь вовремя замечать первые признаки отката.</p></div></section>
+<section class="tarif" id="tarif">
+ <div class="wrap">
+  <h2>Забери готовую систему удержания веса прямо сейчас</h2>
+  <div class="box">
+   <p class="tname">Полный доступ к интенсиву «Вес под контролем»</p>
+   <ul class="checks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Комплект видеоуроков от Татьяны Спрыгиной без воды</span></li></ul>
+   <p class="pdfh">Комплект прикладных PDF-материалов:</p>
+   <ul class="checks pdf"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Конструктор тарелки и правило четырех для магазина</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Сборник простых домашних десертов за 10 минут</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Шпаргалка по питанию в кафе, ресторанах и в поездках</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Протокол выхода из переедания без голодовок</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Инструкция по работе с вечерними 30 секундами</span></li></ul>
+   <label class="agree"><input type="checkbox" class="need"><span>Я принимаю условия <a href="oferta.html" target="_blank">публичной оферты</a></span></label>
+   <p class="agree"><span>Данные для доступа и чека обрабатываются для исполнения договора по <a href="politika.html" target="_blank">политике обработки персональных данных</a></span></p>
+   <label class="agree"><input type="checkbox"><span>Я даю <a href="soglasie-rassylka.html" target="_blank">согласие на получение информационных и рекламных рассылок</a> (по желанию)</span></label>
+   <p class="agree-hint" id="agree-hint" hidden>Отметь галочку с офертой, чтобы перейти к оплате</p>
+   <div class="opts"><div class="opt"><p class="term">Доступ на 30 дней</p><p class="new">1 900 ₽</p><ul class="checks extra"><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 1. Старт и точка отсчёта</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 2. Конструктор тарелки: сытость без весов</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 3. Как есть сладкое и сохранять фигуру</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 4. Еда вне дома: кафе, работа, поездки</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 5. Переедание: что делать на следующее утро</span></li><li class="no"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg><span>День 6. Весы под контролем + трекер-таблица</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 7. Что делать, чтобы не было вечерних зажоров</span></li><li class="no"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg><span>+15 рецептов сладкого до 200 ккал</span></li></ul><a class="btn pay" href="https://login.spryginatatyana.ru/intensiv-30">Принять участие и получить доступ</a></div><div class="opt"><p class="term">Доступ на 90 дней</p><p class="new">2 900 ₽</p><ul class="checks extra"><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 1. Старт и точка отсчёта</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 2. Конструктор тарелки: сытость без весов</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 3. Как есть сладкое и сохранять фигуру</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 4. Еда вне дома: кафе, работа, поездки</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 5. Переедание: что делать на следующее утро</span></li><li class="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 6. Весы под контролем + трекер-таблица</span></li><li class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>День 7. Что делать, чтобы не было вечерних зажоров</span></li><li class="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>+15 рецептов сладкого до 200 ккал</span></li></ul><a class="btn pay" href="https://login.spryginatatyana.ru/intensiv-90">Принять участие и получить доступ</a></div></div>
+  </div>
+ </div>
+</section>
+<section class="gsec">
+ <div class="wrap" style="max-width:820px">
+  <div class="guar">
+    <h2>У меня есть <em>двойная гарантия</em></h2>
+    <div class="g"><span class="gn">1</span><p>Если ты купишь интенсив и тебе не понравится даже мой голос, <b>я верну тебе деньги</b>, тебе нужно только написать мне в личные сообщения.</p></div>
+    <div class="g"><span class="gn">2</span><p>Если ты внедришь абсолютно всё из моего интенсива и за две недели у тебя не будет результата, <b>я верну тебе двойную сумму</b>.</p></div>
+    <p class="terms">Условия гарантии в пунктах 5.6–5.8 <a href="oferta.html" target="_blank">публичной оферты</a>.</p>
+   </div>
+ </div>
+</section>
+<section class="faqs">
+ <div class="wrap">
+  <h2>Часто задаваемые вопросы</h2>
+  <div class="faq-list"><details class="faq"><summary>Мне придется готовить себе отдельно от семьи?<i></i></summary><p>Ни в коем случае. Конструктор тарелки собирается из самых обычных продуктов: мясо, рыба, птица, крупы, макароны, картофель и свежие овощи. Твоя семья будет сыта и довольна, питаясь вместе с тобой.</p></details><details class="faq"><summary>Нужно ли будет взвешивать еду и считать калории?<i></i></summary><p>Нет. Подсчет калорий превращает жизнь в ад и неизбежно ведет к срыву. Мы используем простую визуальную схему ладоней на тарелке 18–20 см, которую легко применить даже в гостях или ресторане.</p></details><details class="faq"><summary>Нужен ли спортзал или тренировки?<i></i></summary><p>Нет. Снижение и удержание веса в первую очередь зависит от того, что и как лежит на твоей тарелке. Спорт полезен для тонуса, но изнурять себя тренировками ради похудения не нужно.</p></details><details class="faq"><summary>Нужно ли сдавать дорогостоящие анализы и покупать БАДы?<i></i></summary><p>Нет. Татьяна работает с физиологией насыщения и поведенческими пищевыми привычками. Никаких таблеток, добавок и медицинских манипуляций.</p></details><details class="faq"><summary>Как я получу доступ к курсу?<i></i></summary><p>Сразу после успешной оплаты на твою электронную почту придет ссылка и данные для входа в твой личный кабинет. Ты сможешь начать обучение в ту же минуту.</p></details></div>
+ </div>
+</section>
+<section class="final"><div class="wrap"><h2>Хватит начинать всё <em>с чистого листа</em></h2><p>Пора один раз разобраться с правилами, научиться удерживать вес и закрыть этот вопрос. Доступ открывается сразу после оплаты. Увидимся с тобой на первом дне интенсива!</p><a class="btn" href="#tarif">Выбрать тариф</a></div></section>
+<section class="optvideo"><div class="art"><h2>Удобнее смотреть, чем читать?</h2><p>Здесь то же самое в моём видео, оно идёт 10 минут.</p></div><div class="wrap"><div class="video"><video class="vsl" src="/intensiv/video/prodayushchiy-rolik-v2.mp4" poster="img/video-poster.webp" controls preload="none" playsinline style="width:100%;height:100%;display:block"></video></div></div></section>
+<footer>© Татьяна Спрыгина<br>ИП Спрыгина Татьяна Ивановна, ИНН 681400131303, ОГРНИП 309774626600121<br>
+<a href="oferta.html" target="_blank">Публичная оферта</a> · <a href="politika.html" target="_blank">Политика обработки персональных данных</a> · <a href="soglasie.html" target="_blank">Согласие на обработку персональных данных</a> · <a href="soglasie-rassylka.html" target="_blank">Согласие на рассылки</a></footer>
+<script>
+(function(){
+ var pay=document.querySelectorAll('.pay'),hint=document.getElementById('agree-hint'),box=document.querySelectorAll('.agree .need');
+ function ok(){for(var i=0;i<box.length;i++)if(!box[i].checked)return false;return true}
+ function sync(){for(var i=0;i<pay.length;i++)pay[i].classList.toggle('off',!ok());if(ok())hint.hidden=true}
+ for(var i=0;i<box.length;i++)box[i].addEventListener('change',sync);
+ for(var i=0;i<pay.length;i++)pay[i].addEventListener('click',function(e){if(!ok()){e.preventDefault();hint.hidden=false}});
+ sync();
+})();
+</script>
+<script>
+// funnel goals: video play, watched 10..100% (plus 25 and 75) and every minute, tariff clicks.
+// Counted from the time actually played (video.played), so skipping ahead is not a watch (Tatiana 10.10.2026).
+(function(){
+ function g(n){if(window.ym)ym(112712905,"reachGoal",n)}
+ var v=document.querySelector("video.vsl"),seen={},marks=[10,20,25,30,40,50,60,70,75,80,90,100];
+ if(v){v.addEventListener("play",function(){if(!seen.p){seen.p=1;g("urok_video_play")}});
+  v.addEventListener("timeupdate",function(){if(!v.duration)return;var w=0,r=v.played;
+   for(var i=0;i<r.length;i++)w+=r.end(i)-r.start(i);
+   for(var j=0;j<marks.length;j++){var q=marks[j];if(w>=v.duration*q/100-0.5&&!seen[q]){seen[q]=1;g("urok_video_"+q)}}
+   for(var m=1;m<=9;m++)if(w>=60*m&&!seen["m"+m]){seen["m"+m]=1;g("urok_video_min"+m)}});}
+ var a=document.querySelectorAll('a[href*="intensiv-30"],a[href*="intensiv-90"]');
+ // pass utm marks (bot client id in utm_term) on to the GetCourse order
+ if(location.search)for(var i=0;i<a.length;i++)a[i].href+=(a[i].href.indexOf("?")<0?"?":"&")+location.search.slice(1);
+ for(var i=0;i<a.length;i++)a[i].addEventListener("click",function(){g(this.href.indexOf("intensiv-90")>-1?"urok_tarif_2900":"urok_tarif_1900")});
+ // tariff block came into view: the funnel step «дошли до блока тарифов»
+ var t=document.getElementById("tarif");
+ if(t&&window.IntersectionObserver)new IntersectionObserver(function(e,o){if(e[0].isIntersecting){g("urok_tarif_vidny");o.disconnect()}},{threshold:0.3}).observe(t);
+})();
+</script>
+<div class="exit" id="exit" hidden role="dialog" aria-modal="true" aria-labelledby="exit-h">
+ <div class="card">
+  <button class="x" type="button" aria-label="Закрыть">&times;</button>
+  <h3 id="exit-h">Подожди, ты ничем не рискуешь</h3>
+  <p>На гарантию у тебя есть 14 дней с момента оплаты. Если интенсив не понравится, я верну деньги в тот же день. Если ты применишь все рекомендации и не получишь эффекта, я верну тебе в два раза больше.</p>
+  <a class="btn" href="#tarif">Выбрать тариф</a>
+  <button class="no" type="button">Нет, спасибо</button>
+ </div>
+</div>
+<script>
+// exit offer: desktop when the cursor leaves through the top edge, phone when the reader scrolls back up
+// (800px up) after reading a third of the page; once per session, never after a tariff click (Natalia 12.10.2026)
+(function(){
+ var el=document.getElementById("exit"),K="exit_shown";
+ function seen(){try{return sessionStorage.getItem(K)}catch(e){return 0}}
+ function show(){if(seen())return;try{sessionStorage.setItem(K,1)}catch(e){}el.hidden=false;if(window.ym)ym(112712905,"reachGoal","urok_exit_show")}
+ function hide(){el.hidden=true}
+ el.querySelector(".x").onclick=hide;el.querySelector(".no").onclick=hide;
+ el.addEventListener("click",function(e){if(e.target===el)hide()});
+ el.querySelector(".btn").addEventListener("click",function(){hide();if(window.ym)ym(112712905,"reachGoal","urok_exit_tarif")});
+ var pays=document.querySelectorAll(".pay");for(var i=0;i<pays.length;i++)pays[i].addEventListener("click",function(){try{sessionStorage.setItem(K,1)}catch(e){}});
+ document.addEventListener("mouseout",function(e){if(!e.relatedTarget&&e.clientY<=0)show()});
+ // phone: the back button or back swipe opens the offer once; #tarif links scroll without a history entry
+ var as=document.querySelectorAll('a[href="#tarif"],a[href="#programma"]');
+ for(var k=0;k<as.length;k++)as[k].addEventListener("click",function(e){e.preventDefault();document.getElementById(this.getAttribute("href").slice(1)).scrollIntoView({behavior:"smooth"})});
+ if(history.pushState){history.pushState({exit:1},"",location.href);
+  window.addEventListener("popstate",function(){if(!seen()){show();history.pushState({exit:1},"",location.href)}else history.back()})}
+ var maxY=0;
+ window.addEventListener("scroll",function(){var y=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  if(y>maxY)maxY=y;
+  if(maxY>h/3&&maxY-y>800)show()},{passive:true});
+})();
+</script>
+</body>
+</html>
