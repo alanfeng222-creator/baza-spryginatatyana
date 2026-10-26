@@ -269,6 +269,8 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
 <script>
 (function(){
  var pay=document.querySelectorAll('.pay'),hint=document.getElementById('agree-hint'),box=document.querySelectorAll('.agree .need');
+ // pass the bot mark (utm_term=cp_<id>) on to the GetCourse order
+ if(location.search)for(var i=0;i<pay.length;i++)pay[i].href+=(pay[i].href.indexOf('?')<0?'?':'&')+location.search.slice(1);
  function ok(){for(var i=0;i<box.length;i++)if(!box[i].checked)return false;return true}
  function sync(){for(var i=0;i<pay.length;i++)pay[i].classList.toggle('off',!ok());if(ok())hint.hidden=true}
  for(var i=0;i<box.length;i++)box[i].addEventListener('change',sync);
