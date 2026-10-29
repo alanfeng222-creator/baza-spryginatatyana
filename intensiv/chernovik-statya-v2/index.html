@@ -172,12 +172,12 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
 /* v2 visual breaks */
 .hphoto{max-width:340px;margin:6px auto 26px;border-radius:var(--r);overflow:hidden;box-shadow:0 20px 40px -24px rgba(0,0,0,.45)}
 .hphoto img{display:block;width:100%;height:auto}
-.hl{color:var(--wine);font-weight:700;background:var(--soft);padding:0 .25em;border-radius:6px}
+.hl{color:var(--wine);font-weight:700}
 .loop{margin:30px auto;max-width:760px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;counter-reset:lp}
 .loop div{position:relative;background:var(--card);border-radius:18px;padding:18px 12px 16px;text-align:center;font-weight:700;color:var(--ink);font-size:15px;line-height:1.3;box-shadow:0 10px 30px -18px rgba(60,10,20,.35),0 0 0 1px rgba(110,16,35,.06)}
 .loop div b{display:block;font-size:28px;line-height:1;margin-bottom:8px}
-.loop div:last-child{background:var(--wine);color:#fff}
-.loop div:not(:last-child):after{content:"→";position:absolute;right:-11px;top:50%;transform:translateY(-50%);color:var(--wine);font-weight:800;z-index:1}
+.loop div:nth-child(4){background:var(--wine);color:#fff}
+.loop div:not(:nth-child(4)):after{content:"→";position:absolute;right:-12px;font-size:20px;top:50%;transform:translateY(-50%);color:var(--wine);font-weight:800;z-index:1}
 .loop p{grid-column:1/-1;text-align:center;font-weight:600;color:var(--wine);margin:4px 0 0}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
 .stats div{background:var(--card);border-radius:18px;padding:18px 10px;text-align:center;box-shadow:0 10px 30px -18px rgba(60,10,20,.35),0 0 0 1px rgba(110,16,35,.06)}
