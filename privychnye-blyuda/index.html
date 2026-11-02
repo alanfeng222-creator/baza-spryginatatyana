@@ -33,6 +33,12 @@ h1,h2,h3{font-family:Montserrat,sans-serif;line-height:1.2}
 .price{font-family:Montserrat,sans-serif;font-size:30px;font-weight:800;margin:18px 0 14px}
 .btn{display:block;text-align:center;background:#e0603a;color:#fff;font-family:Montserrat,sans-serif;font-weight:800;font-size:18px;text-transform:uppercase;text-decoration:none;padding:20px;border-radius:16px}
 .btn:hover{background:#ee7048}
+.btn.off{opacity:.55}
+.agree{display:flex;gap:12px;align-items:flex-start;margin:0 0 12px;font-size:15px;cursor:pointer}
+.agree input{flex:none;width:22px;height:22px;margin-top:1px;accent-color:#e0603a;cursor:pointer}
+.agree a,.legal a{color:inherit;text-decoration:underline}
+.agree-hint{margin:0 0 12px;font-weight:700;font-size:15px}
+.legal{font-size:13px;color:#8b8284;text-align:center;margin:0 0 40px;line-height:1.7}
 .foot{color:var(--mut);font-size:14px;padding:0 0 40px}
 </style></head><body>
 <div class="w">
@@ -76,8 +82,24 @@ h1,h2,h3{font-family:Montserrat,sans-serif;line-height:1.2}
 <p>Это первые 5 рецептов из моего сборника «Привычные блюда в лёгкой версии». В полной версии ещё 25 блюд, от солянки до пиццы.</p><p>Каждый рецепт там устроен так же, как эти пять: что заменили, ингредиенты и как готовить. Сборник приходит файлом PDF. Его удобно открыть с телефона прямо на кухне.</p>
 <div class="sec"><b>Супы</b> Солянка, Рассольник, Окрошка, Гороховый суп</div><div class="sec"><b>Салаты</b> Селёдка под шубой, Винегрет, Мимоза, Цезарь, Оливье, Крабовый салат</div><div class="sec"><b>Горячее</b> Голубцы, Шаурма, Наггетсы, Плов, Пельмени, Жульен, Лазанья, Макароны по-флотски, Бургер, Котлеты, Мясо по-французски</div><div class="sec"><b>Выпечка и сладкое</b> Пирог с капустой, Шарлотка, Пирожки с картошкой, Пицца</div>
 <div class="price">790 ₽</div>
+<label class="agree"><input type="checkbox" class="need"><span>Я принимаю условия <a href="oferta.html" target="_blank">публичной оферты</a></span></label>
+<p class="agree"><span>Данные для доступа и чека обрабатываются для исполнения договора по <a href="politika.html" target="_blank">политике обработки персональных данных</a></span></p>
+<label class="agree"><input type="checkbox"><span>Я даю <a href="soglasie-rassylka.html" target="_blank">согласие на получение информационных и рекламных рассылок</a> (по желанию)</span></label>
+<p class="agree-hint" id="agree-hint" hidden>Отметь галочку с офертой, чтобы перейти к оплате</p>
 <a class="btn pay" href="https://login.spryginatatyana.ru/25-receptov">Купить сборник за 790 ₽</a></section>
 <p class="foot">Фото блюд созданы ИИ.</p>
+<p class="legal">© Татьяна Спрыгина<br>ИП Спрыгина Татьяна Ивановна, ИНН 681400131303, ОГРНИП 309774626600121<br><a href="oferta.html" target="_blank">Публичная оферта</a> · <a href="politika.html" target="_blank">Политика обработки персональных данных</a> · <a href="soglasie.html" target="_blank">Согласие на обработку персональных данных</a> · <a href="soglasie-rassylka.html" target="_blank">Согласие на рассылки</a></p>
 </div>
-<script>document.querySelectorAll("a.pay").forEach(function(a){if(location.search)a.href+=location.search;});</script>
+<script>
+(function(){
+ var pay=document.querySelectorAll('.pay'),hint=document.getElementById('agree-hint'),box=document.querySelectorAll('.agree .need');
+ // pass the bot mark (utm_term=cp_<id>) on to the GetCourse order
+ if(location.search)for(var i=0;i<pay.length;i++)pay[i].href+=(pay[i].href.indexOf('?')<0?'?':'&')+location.search.slice(1);
+ function ok(){for(var i=0;i<box.length;i++)if(!box[i].checked)return false;return true}
+ function sync(){for(var i=0;i<pay.length;i++)pay[i].classList.toggle('off',!ok());if(ok())hint.hidden=true}
+ for(var i=0;i<box.length;i++)box[i].addEventListener('change',sync);
+ for(var i=0;i<pay.length;i++)pay[i].addEventListener('click',function(e){if(!ok()){e.preventDefault();hint.hidden=false}});
+ sync();
+})();
+</script>
 </body></html>
