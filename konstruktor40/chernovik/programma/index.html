@@ -309,5 +309,20 @@ footer{background:var(--ink);color:#9a9092;text-align:center;padding:30px 20px;f
   if(maxY>h/3&&maxY-y>800)show()},{passive:true});
 })();
 </script>
+<script>
+// 40+ funnel goals with their own names, so they do not mix with the SRYV page (Tatiana 02.11.2026: measure from this week)
+(function(){
+ function g(n){if(window.ym)ym(112712905,"reachGoal",n)}
+ var v=document.querySelector("video.vsl"),seen={},marks=[25,50,75,90];
+ if(v){v.addEventListener("play",function(){if(!seen.p){seen.p=1;g("s40_video_play")}});
+  v.addEventListener("timeupdate",function(){if(!v.duration)return;var w=0,r=v.played;
+   for(var i=0;i<r.length;i++)w+=r.end(i)-r.start(i);
+   for(var j=0;j<marks.length;j++){var q=marks[j];if(w>=v.duration*q/100-0.5&&!seen[q]){seen[q]=1;g("s40_video_"+q)}}});}
+ var a=document.querySelectorAll('a[href*="formula-40-1900"],a[href*="formula-40-2900"]');
+ for(var i=0;i<a.length;i++)a[i].addEventListener("click",function(){g(this.href.indexOf("formula-40-2900")>-1?"s40_tarif_2900":"s40_tarif_1900")});
+ var t=document.getElementById("tarif");
+ if(t&&window.IntersectionObserver)new IntersectionObserver(function(e,o){if(e[0].isIntersecting){g("s40_tarif_vidny");o.disconnect()}},{threshold:0.3}).observe(t);
+})();
+</script>
 </body>
 </html>
